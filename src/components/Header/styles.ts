@@ -6,7 +6,7 @@ export const Component = styled.header`
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
-  background-color: #151822;
+  background-color: #000000;
   margin-bottom: 1rem;
 
   a {

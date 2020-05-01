@@ -26,5 +26,5 @@ export const Post = styled.div`
   padding: 1.5rem;
   margin-bottom: 1rem;
   border-radius: 0.5rem;
-  background-color: #151822;
+  background-color: #1a1a1d;
 `;
