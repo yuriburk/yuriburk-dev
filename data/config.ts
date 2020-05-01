@@ -8,7 +8,7 @@ const config = {
   googleAnalyticsID: '**-********-*',
   themeColor: '#000000',
   backgroundColor: '#1a1a1a',
-  siteUrl: '',
+  siteUrl: 'https://yuriburkdev.web.app/',
 };
 
 export default config;
