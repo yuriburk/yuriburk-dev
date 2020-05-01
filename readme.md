@@ -1,4 +1,4 @@
-YuriBurk.dev é um blog pessoal sendo criado como formato de estudo.
+YuriBurk.dev é um blog pessoal sendo criado como formato de estudo, misturando o artigo "Criando um glob com Gatsby e React" (por João Pedro) e meu aprendizado no curso GoStack Bootcamp.
 
 Neste projeto, as tecnologias abordadas são:
 - React
