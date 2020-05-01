@@ -21,7 +21,7 @@
     "./node_modules",
     "./public",
     "./.cache",
-    "./gatsby-config.ts",
+    ".gatsby/gatsby-config.ts",
     "./gatsby-node.ts"
   ]
 }

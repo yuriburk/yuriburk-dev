@@ -4,6 +4,7 @@ export default createGlobalStyle`
   header, body {
     -webkit-font-smoothing: antialiased;
     font-family: 'Montserrat', sans-serif;
+    text-rendering: optimizeLegibility !important;
   }
 
   body {
@@ -24,6 +25,12 @@ export default createGlobalStyle`
     flex: 0 0 33.3%;
     max-width: 33.333%;
     flex-direction: column;
+    padding: 10px 0 0 15px;
+  }
+
+  .content {
+    max-width: 1180px;
+    margin: 0 auto;
     padding: 10px;
   }
 `;
