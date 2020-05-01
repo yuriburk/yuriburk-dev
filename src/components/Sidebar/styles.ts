@@ -4,7 +4,7 @@ export const Container = styled.div`
   padding: 1.5rem;
   margin-bottom: 1rem;
   border-radius: 0.5rem;
-  background-color: #1a1a1d;
+  background-color: #1a1a1a;
 
   h3 {
     font-size: 20px;
