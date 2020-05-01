@@ -1,8 +1,10 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import _ from 'lodash';
+import ReactMarkdown from 'react-markdown/with-html';
 
-import Layout from '../components/Layout';
+import Layout from '../../components/Layout';
+import { Container } from './styles';
 
 interface PostProps {
   data: {
@@ -23,38 +25,22 @@ const Post: React.FC<PostProps> = ({ data }) => {
 
   return (
     <Layout>
-      <div
-        style={{
-          backgroundColor: '#FFF',
-          padding: '1.5rem',
-          borderRadius: '0.50rem',
-          margin: '10px 15px',
-        }}
-      >
-        <h2 style={{ fontSize: '22px', fontWeight: 'bold' }}>{title}</h2>
+      <Container>
+        <h2>{title}</h2>
         <p>
           {tags.map(tag => (
-            <Link
-              style={{ color: '#000', marginRight: '10px' }}
-              key={tag}
-              to={`/tag/${_.kebabCase(tag)}`}
-            >
+            <Link key={tag} to={`/tag/${_.kebabCase(tag)}`}>
               {tag}
             </Link>
           ))}
         </p>
         <p>{date}</p>
-        <div className="content">
-          <p
-            style={{
-              lineHeight: 1.5,
-              textAlign: 'justify',
-              margin: '22px 0px',
-            }}
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
+        <div>
+          <p className="content">
+            <ReactMarkdown source={html} escapeHtml={false} />
+          </p>
         </div>
-      </div>
+      </Container>
     </Layout>
   );
 };
