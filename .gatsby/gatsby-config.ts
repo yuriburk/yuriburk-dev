@@ -1,5 +1,7 @@
 import config from '../data/config';
 
+const { mongo } = config;
+
 export default {
   siteMetadata: {
     title: config.siteTitle,
@@ -103,6 +105,31 @@ export default {
             title: 'Gatsby RSS Feed',
           },
         ],
+      },
+    },
+    {
+      resolve: 'gatsby-source-mongodb',
+      options: {
+        dbName: mongo.dbName,
+        collection: mongo.collection,
+        server: {
+          address: mongo.server.address,
+          port: mongo.server.port,
+        },
+        auth: {
+          user: mongo.auth.user,
+          password: mongo.auth.password,
+        },
+        extraParams: {
+          replicaSet: mongo.extraParams.replicaSet,
+          readPreference: 'secondary',
+          ssl: true,
+          authSource: 'admin',
+          retryWrites: true,
+        },
+        map: {
+          posts: { body: `text/markdown` },
+        },
       },
     },
   ],
