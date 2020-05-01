@@ -1,38 +1,43 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import 'minireset.css';
 
 import Posts from '../components/Posts';
 import Layout from '../components/Layout';
 
-interface AppProps {
+interface TagProps {
   data: any;
+  pathContext: {
+    tag: any;
+  };
 }
 
-const App: React.FC<AppProps> = ({ data }) => (
+const Tag: React.FC<TagProps> = ({ data, pathContext }) => (
   <Layout>
-    <Posts data={data} />
+    <div>
+      <h2 style={{ fontSize: '22px', padding: '0px 15px' }}>
+        Todos os posts com a tag: {pathContext.tag}
+      </h2>
+      <Posts data={data} />
+    </div>
   </Layout>
 );
 
-export default App;
+export default Tag;
 
 export const pageQuery = graphql`
-  query {
+  query TagPage($tag: String) {
     allMarkdownRemark(
-      limit: 2000
+      limit: 1000
       sort: { fields: [fields___prefix], order: DESC }
-      filter: { frontmatter: { draft: { ne: true } } }
+      filter: { frontmatter: { tags: { in: [$tag] }, draft: { ne: true } } }
     ) {
       edges {
         node {
           fields {
             slug
           }
-          timeToRead
           frontmatter {
             title
-            tags
             date(formatString: "DD/MM/YYYY")
             description
           }

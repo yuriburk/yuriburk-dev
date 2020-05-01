@@ -12,6 +12,8 @@
     "@types/styled-components": "^5.1.0",
     "gatsby": "^2.21.7",
     "gatsby-plugin-catch-links": "^2.3.0",
+    "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
+    "gatsby-plugin-react-helmet": "^3.3.0",
     "gatsby-plugin-tslint": "^0.0.2",
     "gatsby-plugin-typescript": "^2.4.0",
     "gatsby-source-filesystem": "^2.3.0",
@@ -20,11 +22,13 @@
     "minireset.css": "^0.0.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-helmet": "^6.0.0",
     "styled-components": "^5.1.0"
   },
   "devDependencies": {
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.7",
+    "@types/react-helmet": "^5.0.15",
     "@typescript-eslint/eslint-plugin": "^2.30.0",
     "@typescript-eslint/parser": "^2.30.0",
     "eslint": "^6.8.0",
