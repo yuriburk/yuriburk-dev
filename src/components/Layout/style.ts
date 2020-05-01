@@ -9,7 +9,7 @@ export default createGlobalStyle`
   body {
     color: #fff;
     font-weight: 500;
-    background-color: #151515; 
+    background-color: #121212; 
   }
 
   html, body {
