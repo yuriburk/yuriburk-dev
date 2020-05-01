@@ -5,6 +5,7 @@ Neste projeto, as tecnologias abordadas são:
 - Gatsby
 - Typescript
 - Styled-Components
+- GraphQL
 
 Para executar o projeto:
 1. Clone o repositório na sua máquina (git clone)
