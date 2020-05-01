@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { shade } from 'polished';
 
 export const Component = styled.header`
   padding: 1rem 1.5rem 1rem 1.5rem;
@@ -12,10 +13,13 @@ export const Title = styled.div`
 
   a {
     text-decoration: none;
-  }
-
-  p {
     font-weight: 800;
-    color: #6fffe9;
+    font-size: 20px;
+    color: #5fffe9;
+    transition: color 0.2s;
+
+    &:hover {
+      color: ${shade(0.8, '#5fffe9')};
+    }
   }
 `;

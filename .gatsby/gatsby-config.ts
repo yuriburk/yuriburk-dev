@@ -13,6 +13,7 @@ export default {
     'gatsby-plugin-offline',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-styled-components',
+    'gatsby-plugin-polished',
     {
       resolve: 'gatsby-plugin-prefetch-google-fonts',
       options: {

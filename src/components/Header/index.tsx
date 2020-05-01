@@ -17,8 +17,8 @@ const Header: React.FC = () => (
     render={data => (
       <Component>
         <Title>
-          <Link to="/">
-            <p>{data.site.siteMetadata.title}</p>
+          <Link to="/" title={data.site.siteMetadata.title}>
+            {'<YuriBurk />'}
           </Link>
         </Title>
       </Component>
