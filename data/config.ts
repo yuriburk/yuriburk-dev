@@ -1,5 +1,5 @@
 const config = {
-  siteTitle: '<YuriBurk />',
+  siteTitle: 'Yuri Burk',
   siteDescription:
     'O melhor blog de programação do Brasil tem nome, é CodeStack.',
   siteTitleShort: 'Yuri Burk',
