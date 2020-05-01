@@ -5,7 +5,8 @@
   "scripts": {
     "dev:server": "gatsby develop",
     "type-check": "tsc --noEmit",
-    "lint": "tslint --project ."
+    "lint": "tslint --project .",
+    "build": "gatsby build"
   },
   "license": "MIT",
   "dependencies": {
