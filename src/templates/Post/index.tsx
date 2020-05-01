@@ -4,6 +4,7 @@ import _ from 'lodash';
 import ReactMarkdown from 'react-markdown/with-html';
 
 import Layout from '../../components/Layout';
+import SEO from '../../components/SEO';
 import { Container } from './styles';
 
 interface PostProps {
@@ -14,18 +15,25 @@ interface PostProps {
         title: string;
         tags: string[];
         date: Date;
+        description: string;
+      };
+      fields: {
+        slug: any;
       };
     };
   };
 }
 
 const Post: React.FC<PostProps> = ({ data }) => {
-  const { html } = data.markdownRemark;
-  const { title, tags, date } = data.markdownRemark.frontmatter;
+  const { markdownRemark } = data;
+  const { html } = markdownRemark;
+  const { slug } = markdownRemark.fields;
+  const { title, tags, date, description } = markdownRemark.frontmatter;
 
   return (
     <Layout>
       <Container>
+        <SEO title={title} url={slug} description={description} article />
         <h2>{title}</h2>
         <p>
           {tags.map(tag => (
@@ -35,10 +43,8 @@ const Post: React.FC<PostProps> = ({ data }) => {
           ))}
         </p>
         <p>{date}</p>
-        <div>
-          <p className="content">
-            <ReactMarkdown source={html} escapeHtml={false} />
-          </p>
+        <div className="content">
+          <ReactMarkdown source={html} escapeHtml={false} />
         </div>
       </Container>
     </Layout>

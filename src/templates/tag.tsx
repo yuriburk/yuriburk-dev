@@ -3,17 +3,26 @@ import { graphql } from 'gatsby';
 
 import Posts from '../components/Posts';
 import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 
 interface TagProps {
   data: any;
   pathContext: {
     tag: any;
   };
+  location: {
+    pathname: string;
+  };
 }
 
-const Tag: React.FC<TagProps> = ({ data, pathContext }) => (
+const Tag: React.FC<TagProps> = ({ data, pathContext, location }) => (
   <Layout>
     <div>
+      <SEO
+        title={`Tag: ${pathContext.tag}`}
+        description={`Todos os posts marcados com a tag "${pathContext.tag}" no CodeStack Brasil`}
+        url={location.pathname}
+      />
       <h2 style={{ fontSize: '22px', padding: '0px 15px' }}>
         Todos os posts com a tag: {pathContext.tag}
       </h2>

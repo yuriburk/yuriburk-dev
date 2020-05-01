@@ -1,7 +1,7 @@
 import React from 'react';
 import { StaticQuery, graphql, Link } from 'gatsby';
 
-import { Component } from './styles';
+import { Component, Title } from './styles';
 
 const Header: React.FC = () => (
   <StaticQuery
@@ -16,9 +16,11 @@ const Header: React.FC = () => (
     `}
     render={data => (
       <Component>
-        <Link to="/">
-          <h1>{data.site.siteMetadata.title}</h1>
-        </Link>
+        <Title>
+          <Link to="/">
+            <p>{data.site.siteMetadata.title}</p>
+          </Link>
+        </Title>
       </Component>
     )}
   />

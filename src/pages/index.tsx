@@ -4,6 +4,7 @@ import 'minireset.css';
 
 import Posts from '../components/Posts';
 import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 
 interface AppProps {
   data: any;
@@ -11,6 +12,7 @@ interface AppProps {
 
 const App: React.FC<AppProps> = ({ data }) => (
   <Layout>
+    <SEO />
     <Posts data={data} />
   </Layout>
 );

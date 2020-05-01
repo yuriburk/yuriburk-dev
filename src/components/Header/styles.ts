@@ -2,18 +2,19 @@ import styled from 'styled-components';
 
 export const Component = styled.header`
   padding: 1rem 1.5rem 1rem 1.5rem;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: row;
-  background-color: #1a1a1a;
-  margin-bottom: 1rem;
+  background-color: #1a1a1d;
+`;
+
+export const Title = styled.div`
+  margin: 0 auto;
+  max-width: 1180px;
+  padding: 10px;
 
   a {
     text-decoration: none;
   }
 
-  h1 {
+  p {
     font-weight: 800;
     color: #6fffe9;
   }
