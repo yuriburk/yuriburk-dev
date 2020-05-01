@@ -3,6 +3,6 @@ node_modules
 public
 yarn.lock
 yarn-error.log*
-./data/config.ts
-./firebase
+data/config.ts
+.firebase
 .firebaserc
