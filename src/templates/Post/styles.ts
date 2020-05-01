@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  background-color: #1a1a1a;
+  background-color: #1a1a1d;
   padding: 1.5rem;
   border-radius: 0.5rem;
-  margin: 10px 15px;
+  margin: 10px 0;
 
   h2 {
     font-size: 22px;
