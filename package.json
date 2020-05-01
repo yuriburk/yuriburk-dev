@@ -26,6 +26,7 @@
     "gatsby-plugin-tslint": "^0.0.2",
     "gatsby-plugin-typescript": "^2.4.0",
     "gatsby-source-filesystem": "^2.3.0",
+    "gatsby-source-mongodb": "^2.3.0",
     "gatsby-transformer-remark": "^2.8.3",
     "lodash": "^4.17.15",
     "minireset.css": "^0.0.6",
