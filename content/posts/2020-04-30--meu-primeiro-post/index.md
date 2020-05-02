@@ -1,6 +1,6 @@
 ---
 title: 'Meu primeiro post'
-featuredImage: ../../images/icon.png
+image: ../../images/icon.png
 date: '2020-04-30'
 description: 'Illas semine campoque declivia oppida corpora nam inter fuit discordia tellus solidumque iunctarum erat: quae terrenae ubi rerum recessit'
 draft: false
