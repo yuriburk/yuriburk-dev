@@ -1,7 +1,5 @@
 import config from '../data/config';
 
-const { mongo } = config;
-
 export default {
   siteMetadata: {
     title: config.siteTitle,
