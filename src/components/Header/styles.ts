@@ -33,7 +33,7 @@ export const Title = styled.div(
 
       &:hover {
         color: ${shade(
-          0.8,
+          0.5,
           dark ? theme.colors.primaryBlue : theme.colors.secundaryBlue,
         )};
       }
@@ -61,7 +61,7 @@ export const Navigation = styled.div(
 
           &:hover {
             color: ${shade(
-              0.8,
+              0.5,
               dark ? theme.colors.primaryBlue : theme.colors.secundaryBlue,
             )};
           }
@@ -90,7 +90,7 @@ export const Button = styled.button(
           `
         : css`
             color: ${shade(
-              0.8,
+              0.5,
               dark ? theme.colors.primaryBlue : theme.colors.secundaryBlue,
             )};
           `}
