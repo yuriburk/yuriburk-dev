@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev:server": "gatsby develop",
+    "dev": "gatsby develop",
     "type-check": "tsc --noEmit",
     "lint": "tslint --project .",
     "build": "gatsby build"

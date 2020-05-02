@@ -4,4 +4,9 @@ export const theme = {
   colors,
 };
 
-export type Theme = typeof theme;
+type Theme = typeof theme;
+
+export interface ThemeProps {
+  dark: boolean;
+  theme: Theme;
+}

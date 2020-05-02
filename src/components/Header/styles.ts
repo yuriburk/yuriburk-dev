@@ -1,10 +1,17 @@
 import styled, { css } from 'styled-components';
 import { shade } from 'polished';
 
-export const Container = styled.header`
-  padding: 1rem 1.5rem 1rem 1.5rem;
-  background-color: #1a1a1d;
-`;
+import { ThemeProps } from '../../styles/themes';
+
+export const Container = styled.header(
+  ({ dark, theme }: ThemeProps) => css`
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    background-color: ${dark
+      ? theme.colors.secundaryDark
+      : theme.colors.secundaryWhite};
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.15);
+  `,
+);
 
 export const Items = styled.div`
   margin: 0 auto;
@@ -15,62 +22,78 @@ export const Items = styled.div`
   justify-content: space-between;
 `;
 
-export const Title = styled.div`
-  a {
-    text-decoration: none;
-    font-weight: 800;
-    font-size: 22px;
-    color: #5fffe9;
-    transition: color 0.2s;
+export const Title = styled.div(
+  ({ dark, theme }: ThemeProps) => css`
+    a {
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 22px;
+      color: ${dark ? theme.colors.primaryBlue : theme.colors.secundaryBlue};
+      transition: color 0.2s;
 
-    &:hover {
-      color: ${shade(0.8, '#5fffe9')};
+      &:hover {
+        color: ${shade(
+          0.8,
+          dark ? theme.colors.primaryBlue : theme.colors.secundaryBlue,
+        )};
+      }
     }
-  }
-`;
+  `,
+);
 
-export const Navigation = styled.div`
-  ul {
-    display: flex;
-
-    li {
+export const Navigation = styled.div(
+  ({ dark, theme }: ThemeProps) => css`
+    ul {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0px 1rem;
 
-      a {
-        color: #5fffe9;
-        text-decoration: none;
-        transition: color 0.2s;
+      li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 1rem;
 
-        &:hover {
-          color: ${shade(0.8, '#5fffe9')};
+        a {
+          color: ${dark
+            ? theme.colors.primaryBlue
+            : theme.colors.secundaryBlue};
+          text-decoration: none;
+          transition: color 0.2s;
+
+          &:hover {
+            color: ${shade(
+              0.8,
+              dark ? theme.colors.primaryBlue : theme.colors.secundaryBlue,
+            )};
+          }
         }
       }
     }
-  }
-`;
+  `,
+);
 
-interface ButtonProps {
+interface ButtonProps extends ThemeProps {
   hoverColor?: string;
 }
 
-export const Button = styled.button<ButtonProps>`
-  background: transparent;
-  border: 0;
-  outline: 0;
-  color: #5fffe9;
-  transition: color 0.2s;
+export const Button = styled.button(
+  ({ dark, theme, hoverColor }: ButtonProps) => css`
+    background: transparent;
+    border: 0;
+    outline: 0;
+    color: ${dark ? theme.colors.primaryBlue : theme.colors.secundaryBlue};
+    transition: color 0.2s;
 
-  &:hover {
-    ${props =>
-      props.hoverColor
+    &:hover {
+      ${hoverColor
         ? css`
-            color: ${shade(0, props.hoverColor)};
+            color: ${shade(0, hoverColor)};
           `
         : css`
-            color: ${shade(0.8, '#5fffe9')};
+            color: ${shade(
+              0.8,
+              dark ? theme.colors.primaryBlue : theme.colors.secundaryBlue,
+            )};
           `}
-  }
-`;
+    }
+  `,
+);

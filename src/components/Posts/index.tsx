@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import { Container, Post } from './styles';
+import { useTheme } from '../../hooks/theme';
 
 interface PostsProps {
   data: any;
@@ -9,8 +10,10 @@ interface PostsProps {
 
 const Posts: React.FC<PostsProps> = ({ data }) => {
   const { edges } = data.allMarkdownRemark;
+  const { dark } = useTheme();
+
   const posts = edges.map(({ node }: any) => (
-    <Post key={node.fields.slug}>
+    <Post dark={dark} key={node.fields.slug}>
       <Link to={node.fields.slug}>
         <h2>{node.frontmatter.title}</h2>
       </Link>

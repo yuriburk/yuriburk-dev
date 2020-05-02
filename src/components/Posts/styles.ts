@@ -1,11 +1,12 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+import { ThemeProps } from '../../styles/themes';
 
 export const Container = styled.div`
   padding: 10px 0;
   width: 100%;
 
   a {
-    color: #fff;
     text-decoration: none;
 
     h2 {
@@ -22,9 +23,13 @@ export const Container = styled.div`
   }
 `;
 
-export const Post = styled.div`
-  padding: 1.5rem;
-  margin-bottom: 1rem;
-  border-radius: 0.5rem;
-  background-color: #1a1a1d;
-`;
+export const Post = styled.div(
+  ({ dark, theme }: ThemeProps) => css`
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    background-color: ${dark
+      ? theme.colors.secundaryDark
+      : theme.colors.secundaryWhite};
+  `,
+);
