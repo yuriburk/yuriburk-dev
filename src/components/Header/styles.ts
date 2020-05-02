@@ -73,15 +73,32 @@ export const Navigation = styled.div(
 
 interface ButtonProps extends ThemeProps {
   hoverColor?: string;
+  animate?: boolean;
 }
 
 export const Button = styled.button(
-  ({ dark, theme, hoverColor }: ButtonProps) => css`
+  ({ dark, theme, hoverColor, animate }: ButtonProps) => css`
     background: transparent;
     border: 0;
     outline: 0;
     color: ${dark ? theme.colors.primaryBlue : theme.colors.secundaryBlue};
     transition: color 0.2s;
+
+    ${animate &&
+    css`
+      @keyframes changeColor {
+        from {
+          color: ${hoverColor ?? 'white'};
+        }
+        to {
+          color: ${dark
+            ? theme.colors.primaryBlue
+            : theme.colors.secundaryBlue};
+        }
+      }
+
+      animation: changeColor 2.5s alternate-reverse 2;
+    `}
 
     &:hover {
       ${hoverColor

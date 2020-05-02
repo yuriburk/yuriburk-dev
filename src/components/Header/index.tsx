@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { StaticQuery, graphql, Link } from 'gatsby';
 import { FaSun, FaMoon, FaSearch } from 'react-icons/fa';
 
@@ -7,6 +7,18 @@ import { Container, Items, Title, Navigation, Button } from './styles';
 
 const Header: React.FC = () => {
   const { dark, toggleTheme } = useTheme();
+  const [firstLoad, setFirstLoad] = useState(false);
+
+  const checkFirstPageLoad = useCallback(() => {
+    const firstPageLoad = localStorage.getItem('@YuriBurk.dev:firstLoad');
+
+    if (firstPageLoad === null) {
+      setFirstLoad(true);
+      localStorage.setItem('@YuriBurk.dev:firstLoad', JSON.stringify(true));
+    }
+  }, []);
+
+  useEffect(() => checkFirstPageLoad(), [checkFirstPageLoad]);
 
   return (
     <StaticQuery
@@ -50,6 +62,7 @@ const Header: React.FC = () => {
                       type="button"
                       onClick={toggleTheme}
                       hoverColor="#d9dc25"
+                      animate={firstLoad}
                     >
                       {dark ? <FaSun size={24} /> : <FaMoon size={24} />}
                     </Button>
