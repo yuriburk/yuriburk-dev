@@ -1,4 +1,10 @@
-import React, { useState, createContext, useCallback, useContext } from 'react';
+import React, {
+  useState,
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+} from 'react';
 import { ThemeProvider as StyledProvider } from 'styled-components';
 
 import { theme } from '../styles/themes';
@@ -13,15 +19,15 @@ export const ThemeContext = createContext<ThemeContextData>(
 );
 
 export const ThemeProvider: React.FC = ({ children }) => {
-  const [dark, setDark] = useState(() => {
+  const [dark, setDark] = useState(true);
+
+  useEffect(() => {
     const darkTheme = localStorage.getItem('@YuriBurk.dev:dark-theme');
 
     if (darkTheme) {
-      return JSON.parse(darkTheme);
+      setDark(JSON.parse(darkTheme));
     }
-
-    return true;
-  });
+  }, []);
 
   const toggleTheme = useCallback(() => {
     setDark(!dark);
