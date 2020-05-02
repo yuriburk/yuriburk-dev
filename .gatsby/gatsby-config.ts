@@ -8,6 +8,8 @@ export default {
   },
   plugins: [
     'gatsby-plugin-typescript',
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     'gatsby-transformer-remark',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-offline',
@@ -30,6 +32,13 @@ export default {
       options: {
         name: 'posts',
         path: `${__dirname}\\..\\content\\posts`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: `${__dirname}\\..\\content\\images`,
       },
     },
     {

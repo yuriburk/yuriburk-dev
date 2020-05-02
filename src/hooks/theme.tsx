@@ -22,7 +22,7 @@ export const ThemeProvider: React.FC = ({ children }) => {
   const [dark, setDark] = useState(true);
 
   useEffect(() => {
-    const darkTheme = localStorage.getItem('@YuriBurk.dev:dark-theme');
+    const darkTheme = localStorage.getItem('@YuriBurk.dev:darkTheme');
 
     if (darkTheme) {
       setDark(JSON.parse(darkTheme));
@@ -31,7 +31,7 @@ export const ThemeProvider: React.FC = ({ children }) => {
 
   const toggleTheme = useCallback(() => {
     setDark(!dark);
-    localStorage.setItem('@YuriBurk.dev:dark-theme', JSON.stringify(!dark));
+    localStorage.setItem('@YuriBurk.dev:darkTheme', JSON.stringify(!dark));
   }, [dark]);
 
   return (
