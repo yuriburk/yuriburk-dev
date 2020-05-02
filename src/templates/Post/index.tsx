@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import Img, { FluidObject } from 'gatsby-image';
 import _ from 'lodash';
 import ReactMarkdown from 'react-markdown/with-html';
 
@@ -18,10 +17,8 @@ interface PostProps {
         tags: string[];
         date: Date;
         description: string;
-        featuredImage: {
-          childImageSharp: {
-            fluid: FluidObject;
-          };
+        image: {
+          publicURL: string;
         };
       };
       fields: {
@@ -36,13 +33,7 @@ const Post: React.FC<PostProps> = ({ data }) => {
   const { markdownRemark } = data;
   const { html } = markdownRemark;
   const { slug } = markdownRemark.fields;
-  const {
-    title,
-    tags,
-    date,
-    description,
-    featuredImage,
-  } = markdownRemark.frontmatter;
+  const { title, tags, date, description, image } = markdownRemark.frontmatter;
 
   return (
     <Layout>
@@ -58,12 +49,9 @@ const Post: React.FC<PostProps> = ({ data }) => {
         </p>
         <p>{date}</p>
         <div className="content">
-          <Img
-            style={{ margin: '1rem', maxHeight: 'calc(50vh - 4rem)' }}
-            imgStyle={{ objectFit: 'contain' }}
-            fluid={featuredImage.childImageSharp.fluid}
-            fadeIn={false}
-          />
+          <div className="flex-center">
+            <img src={image.publicURL} alt="post-img" />
+          </div>
           <ReactMarkdown source={html} escapeHtml={false} />
         </div>
       </Container>
@@ -84,17 +72,8 @@ export const pageQuery = graphql`
         date(formatString: "DD/MM/YYYY")
         tags
         description
-        featuredImage {
-          childImageSharp {
-            fluid(maxWidth: 800) {
-              aspectRatio
-              src
-              srcSet
-              tracedSVG
-              srcWebp
-              srcSetWebp
-            }
-          }
+        image {
+          publicURL
         }
       }
       fields {

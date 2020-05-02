@@ -28,5 +28,10 @@ export const Container = styled.div(
       text-align: justify;
       margin: 22px 0px;
     }
+
+    .flex-center {
+      display: flex;
+      justify-content: center;
+    }
   `,
 );
