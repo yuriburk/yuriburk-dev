@@ -1,14 +1,9 @@
 import { createGlobalStyle, css } from 'styled-components';
 
-import { Theme } from '../../styles/themes';
-
-interface ThemeProps {
-  dark: boolean;
-  theme: Theme;
-}
+import { ThemeProps } from '../../styles/themes';
 
 export default createGlobalStyle(
-  (props: ThemeProps) => css`
+  ({ dark, theme }: ThemeProps) => css`
     header,
     body {
       -webkit-font-smoothing: antialiased;
@@ -19,9 +14,9 @@ export default createGlobalStyle(
     body {
       color: #fff;
       font-weight: 500;
-      background-color: ${props.dark
-        ? props.theme.colors.darkBackground
-        : props.theme.colors.whiteBackground};
+      background-color: ${dark
+        ? theme.colors.primaryDark
+        : theme.colors.primaryWhite};
     }
 
     html,
@@ -29,9 +24,15 @@ export default createGlobalStyle(
       height: 100%;
     }
 
+    h2 {
+      color: ${dark ? theme.colors.primaryBlue : theme.colors.secundaryBlue};
+    }
+
+    a,
     p,
     div {
       font-size: 18px;
+      color: ${dark ? theme.colors.secundaryWhite : theme.colors.primaryDark};
     }
 
     svg {

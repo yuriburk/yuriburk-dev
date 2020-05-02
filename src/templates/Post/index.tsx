@@ -6,6 +6,7 @@ import ReactMarkdown from 'react-markdown/with-html';
 import Layout from '../../components/Layout';
 import SEO from '../../components/SEO';
 import { Container } from './styles';
+import { useTheme } from '../../hooks/theme';
 
 interface PostProps {
   data: {
@@ -25,6 +26,7 @@ interface PostProps {
 }
 
 const Post: React.FC<PostProps> = ({ data }) => {
+  const { dark } = useTheme();
   const { markdownRemark } = data;
   const { html } = markdownRemark;
   const { slug } = markdownRemark.fields;
@@ -32,7 +34,7 @@ const Post: React.FC<PostProps> = ({ data }) => {
 
   return (
     <Layout>
-      <Container>
+      <Container dark={dark}>
         <SEO title={title} url={slug} description={description} article />
         <h2>{title}</h2>
         <p>

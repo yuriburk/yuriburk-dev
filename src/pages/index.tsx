@@ -1,23 +1,19 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import 'minireset.css';
 
 import Posts from '../components/Posts';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-import { ThemeProvider } from '../hooks/theme';
 
 interface AppProps {
   data: any;
 }
 
 const App: React.FC<AppProps> = ({ data }) => (
-  <ThemeProvider>
-    <Layout>
-      <SEO />
-      <Posts data={data} />
-    </Layout>
-  </ThemeProvider>
+  <Layout>
+    <SEO />
+    <Posts data={data} />
+  </Layout>
 );
 
 export default App;
