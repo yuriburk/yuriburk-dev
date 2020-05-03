@@ -1,6 +1,5 @@
 const path = require('path');
 const _ = require('lodash');
-
 const { createFilePath } = require('gatsby-source-filesystem');
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -39,6 +38,7 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
+    const indexTemplate = path.resolve('src/templates/index.tsx');
     const postTemplate = path.resolve('src/templates/Post/index.tsx');
     const tagTemplate = path.resolve('src/templates/tag.tsx');
     resolve(
@@ -106,6 +106,21 @@ exports.createPages = ({ graphql, actions }) => {
 
         /* Cria a página de posts */
         const posts = items.filter(item => item.node.fields.source === 'posts');
+        const itemsPerPage = 5;
+        const numPages = Math.ceil(posts.length / itemsPerPage);
+        Array.from({ length: numPages }).forEach((_, i) => {
+          createPage({
+            path: i === 0 ? `/` : `/${i + 1}`,
+            component: indexTemplate,
+            context: {
+              limit: itemsPerPage,
+              skip: i * itemsPerPage,
+              numPages,
+              currentPage: i + 1,
+            },
+          });
+        });
+
         posts.forEach(({ node }, index) => {
           const { slug, source } = node.fields;
           createPage({

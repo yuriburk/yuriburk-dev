@@ -14,7 +14,8 @@ interface AppProps {
   };
 }
 
-const App: React.FC<AppProps> = ({ data }: any) => {
+const App: React.FC = ({ data, pageContext }: any) => {
+  console.log(pageContext);
   return (
     <Layout>
       <SEO />
@@ -26,11 +27,12 @@ const App: React.FC<AppProps> = ({ data }: any) => {
 export default App;
 
 export const pageQuery = graphql`
-  query {
+  query QueryIndex($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
-      limit: 2000
       sort: { fields: [fields___prefix], order: DESC }
       filter: { frontmatter: { draft: { ne: true } } }
+      skip: $skip
+      limit: $limit
     ) {
       edges {
         node {

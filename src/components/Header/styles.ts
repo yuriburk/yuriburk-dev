@@ -20,7 +20,7 @@ export const Container = styled.header(
 export const Items = styled.div`
   margin: 0 auto;
   max-width: 1180px;
-  padding: 10px;
+  padding: 10px 0 10px 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
