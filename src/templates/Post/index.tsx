@@ -2,10 +2,11 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import _ from 'lodash';
 import ReactMarkdown from 'react-markdown/with-html';
+import { FaCircle } from 'react-icons/fa';
 
 import Layout from '../../components/Layout';
 import SEO from '../../components/SEO';
-import { Container } from './styles';
+import { Container, PostInfo, Tag } from './styles';
 import { useTheme } from '../../hooks/theme';
 
 interface PostProps {
@@ -24,6 +25,7 @@ interface PostProps {
       fields: {
         slug: string;
       };
+      timeToRead: number;
     };
   };
 }
@@ -31,23 +33,28 @@ interface PostProps {
 const Post: React.FC<PostProps> = ({ data }) => {
   const { dark } = useTheme();
   const { markdownRemark } = data;
-  const { html } = markdownRemark;
+  const { html, frontmatter, timeToRead } = markdownRemark;
   const { slug } = markdownRemark.fields;
-  const { title, tags, date, description, image } = markdownRemark.frontmatter;
+  const { title, tags, date, description, image } = frontmatter;
 
   return (
     <Layout>
       <Container dark={dark}>
         <SEO title={title} url={slug} description={description} article />
         <h2>{title}</h2>
-        <p>
-          {tags.map(tag => (
-            <Link key={tag} to={`/tag/${_.kebabCase(tag)}`}>
-              {tag}
-            </Link>
-          ))}
-        </p>
-        <p>{date}</p>
+        <PostInfo dark={dark}>
+          <Tag dark={dark}>
+            {tags.map(tag => (
+              <Link key={tag} to={`/tag/${_.kebabCase(tag)}`}>
+                {tag}
+              </Link>
+            ))}
+          </Tag>
+          <FaCircle size={5} />
+          <p>{date}</p>
+          <FaCircle size={5} />
+          <p>{timeToRead} min de leitura</p>
+        </PostInfo>
         <div className="content">
           <div className="flex-center">
             <img src={image.publicURL} alt="post-img" />

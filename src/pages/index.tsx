@@ -6,15 +6,22 @@ import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
 interface AppProps {
-  data: any;
+  frontmatter: {
+    title: string;
+    tags: string[];
+    date: Date;
+    description: string;
+  };
 }
 
-const App: React.FC<AppProps> = ({ data }) => (
-  <Layout>
-    <SEO />
-    <Posts data={data} />
-  </Layout>
-);
+const App: React.FC<AppProps> = ({ data }: any) => {
+  return (
+    <Layout>
+      <SEO />
+      <Posts data={data} />
+    </Layout>
+  );
+};
 
 export default App;
 
