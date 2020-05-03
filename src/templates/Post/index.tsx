@@ -1,13 +1,12 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
-import _ from 'lodash';
+import { graphql } from 'gatsby';
 import ReactMarkdown from 'react-markdown/with-html';
-import { FaCircle } from 'react-icons/fa';
 
 import Layout from '../../components/Layout';
 import SEO from '../../components/SEO';
-import { Container, PostInfo, Tag } from './styles';
+import { Container } from './styles';
 import { useTheme } from '../../hooks/theme';
+import PostInfo from '../../components/PostInfo';
 
 interface PostProps {
   data: {
@@ -42,19 +41,7 @@ const Post: React.FC<PostProps> = ({ data }) => {
       <Container dark={dark}>
         <SEO title={title} url={slug} description={description} article />
         <h2>{title}</h2>
-        <PostInfo dark={dark}>
-          <Tag dark={dark}>
-            {tags.map(tag => (
-              <Link key={tag} to={`/tag/${_.kebabCase(tag)}`}>
-                {tag}
-              </Link>
-            ))}
-          </Tag>
-          <FaCircle size={5} />
-          <p>{date}</p>
-          <FaCircle size={5} />
-          <p>{timeToRead} min de leitura</p>
-        </PostInfo>
+        <PostInfo tags={tags} date={date} timeToRead={timeToRead} clickable />
         <div className="content">
           <div className="flex-center">
             <img src={image.publicURL} alt="post-img" />

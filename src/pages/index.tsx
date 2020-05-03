@@ -43,6 +43,9 @@ export const pageQuery = graphql`
             tags
             date(formatString: "DD/MM/YYYY")
             description
+            image {
+              publicURL
+            }
           }
         }
       }

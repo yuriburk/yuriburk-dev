@@ -1,8 +1,10 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { navigate } from 'gatsby';
+import { FaChevronRight } from 'react-icons/fa';
 
-import { Container, Post } from './styles';
+import { Container, Post, Title, ImageContainer } from './styles';
 import { useTheme } from '../../hooks/theme';
+import PostInfo from '../PostInfo';
 
 interface PostsProps {
   data: any;
@@ -12,16 +14,31 @@ const Posts: React.FC<PostsProps> = ({ data }) => {
   const { edges } = data.allMarkdownRemark;
   const { dark } = useTheme();
 
-  const posts = edges.map(({ node }: any) => (
-    <Post dark={dark} key={node.fields.slug}>
-      <Link to={node.fields.slug}>
-        <h2>{node.frontmatter.title}</h2>
-      </Link>
-      <p className="post-date">{node.frontmatter.date}</p>
-      <p>{node.frontmatter.description}</p>
-    </Post>
-  ));
-  return <Container>{posts}</Container>;
+  return (
+    <Container>
+      {edges.map(({ node }: any) => (
+        <Post
+          dark={dark}
+          key={node.fields.slug}
+          onClick={() => navigate(node.fields.slug)}
+        >
+          <ImageContainer url={node.frontmatter.image.publicURL} />
+          <div>
+            <Title>
+              <h2>{node.frontmatter.title}</h2>
+              <FaChevronRight />
+            </Title>
+            <PostInfo
+              tags={node.frontmatter.tags}
+              date={node.frontmatter.date}
+              timeToRead={node.timeToRead}
+            />
+            <p>{node.frontmatter.description}</p>
+          </div>
+        </Post>
+      ))}
+    </Container>
+  );
 };
 
 export default Posts;

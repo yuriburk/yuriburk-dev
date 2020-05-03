@@ -25,10 +25,9 @@ export default createGlobalStyle(
     }
 
     h2 {
-      color: ${dark ? theme.colors.primaryBlue : theme.colors.secundaryBlue};
+      color: ${theme.colors.blue};
     }
 
-    a,
     p,
     div {
       font-size: 18px;
@@ -63,12 +62,12 @@ export default createGlobalStyle(
     }
 
     ::-webkit-scrollbar-thumb:vertical {
-      background: ${theme.colors.primaryBlue};
+      background: ${theme.colors.blue};
       border-radius: 100px;
     }
 
     ::-webkit-scrollbar-thumb:vertical:active {
-      background: ${theme.colors.primaryBlue};
+      background: ${theme.colors.blue};
       border-radius: 100px;
     }
 
@@ -83,12 +82,12 @@ export default createGlobalStyle(
     }
 
     pre::-webkit-scrollbar-thumb {
-      background: ${theme.colors.primaryBlue};
+      background: ${theme.colors.blue};
       border-radius: 100px;
     }
 
     pre::-webkit-scrollbar-thumb:active {
-      background: ${theme.colors.primaryBlue};
+      background: ${theme.colors.blue};
       border-radius: 100px;
     }
   `,

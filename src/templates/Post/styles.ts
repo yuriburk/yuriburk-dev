@@ -19,7 +19,6 @@ export const Container = styled.div(
 
     p {
       a {
-        color: #6fffe9;
         margin-right: 10px;
       }
     }
@@ -33,49 +32,6 @@ export const Container = styled.div(
     .flex-center {
       display: flex;
       justify-content: center;
-    }
-  `,
-);
-
-export const PostInfo = styled.div(
-  ({ dark, theme }: ThemeProps) => css`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 25px 0 55px 0;
-
-    a {
-      font-size: 15px;
-    }
-
-    svg {
-      margin: 0 10px;
-      color: ${dark ? theme.colors.primaryBlue : theme.colors.secundaryBlue};
-    }
-
-    p {
-      font-size: 15px;
-    }
-  `,
-);
-
-export const Tag = styled.div(
-  ({ dark, theme }: ThemeProps) => css`
-    display: flex;
-    align-items: center;
-
-    a {
-      padding: 2.5px 5px;
-      border-radius: 5px;
-      text-decoration: none;
-      color: ${theme.colors.primaryWhite};
-      background-color: ${dark
-        ? theme.colors.primaryBlue
-        : theme.colors.secundaryBlue};
-
-      & + a {
-        margin-left: 10px;
-      }
     }
   `,
 );
