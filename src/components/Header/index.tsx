@@ -23,10 +23,10 @@ const Header: React.FC = () => {
   return (
     <Container dark={dark}>
       <Items>
-        <Title dark={dark}>
+        <Title>
           <Link to="/">{'<YuriBurk />'}</Link>
         </Title>
-        <Navigation dark={dark}>
+        <Navigation>
           <nav>
             <ul>
               <li>

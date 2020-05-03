@@ -48,7 +48,11 @@ export const pageQuery = graphql`
           frontmatter {
             title
             date(formatString: "DD/MM/YYYY")
+            tags
             description
+            image {
+              publicURL
+            }
           }
         }
       }

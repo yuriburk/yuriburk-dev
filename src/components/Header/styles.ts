@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components';
 import { shade } from 'polished';
 
-import { ThemeProps } from '../../styles/themes';
+import { theme, ThemeProps } from '../../styles/themes';
 
 export const Container = styled.header(
-  ({ dark, theme }: ThemeProps) => css`
+  ({ dark }: ThemeProps) => css`
     padding: 1rem 1.5rem 1rem 1.5rem;
     background-color: ${dark
       ? theme.colors.secundaryDark
@@ -22,54 +22,43 @@ export const Items = styled.div`
   justify-content: space-between;
 `;
 
-export const Title = styled.div(
-  ({ dark, theme }: ThemeProps) => css`
-    a {
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 25px;
-      color: ${dark ? theme.colors.primaryBlue : theme.colors.secundaryBlue};
-      transition: color 0.2s;
+export const Title = styled.div`
+  transition: transform 0.1s cubic-bezier(0, 1.8, 1, 1.8);
+  &:hover {
+    transform: scale(1.1);
+  }
 
-      &:hover {
-        color: ${shade(
-          0.5,
-          dark ? theme.colors.primaryBlue : theme.colors.secundaryBlue,
-        )};
-      }
-    }
-  `,
-);
+  a {
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 25px;
+    color: ${theme.colors.blue};
+    transition: color 0.2s;
+  }
+`;
 
-export const Navigation = styled.div(
-  ({ dark, theme }: ThemeProps) => css`
-    ul {
+export const Navigation = styled.div`
+  ul {
+    display: flex;
+
+    li {
       display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0px 1rem;
 
-      li {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0px 1rem;
+      a {
+        color: ${theme.colors.blue};
+        text-decoration: none;
+        transition: color 0.2s;
 
-        a {
-          color: ${dark
-            ? theme.colors.primaryBlue
-            : theme.colors.secundaryBlue};
-          text-decoration: none;
-          transition: color 0.2s;
-
-          &:hover {
-            color: ${shade(
-              0.5,
-              dark ? theme.colors.primaryBlue : theme.colors.secundaryBlue,
-            )};
-          }
+        &:hover {
+          color: ${shade(0.5, theme.colors.blue)};
         }
       }
     }
-  `,
-);
+  }
+`;
 
 interface ButtonProps extends ThemeProps {
   hoverColor?: string;
@@ -77,11 +66,11 @@ interface ButtonProps extends ThemeProps {
 }
 
 export const Button = styled.button(
-  ({ dark, theme, hoverColor, animate }: ButtonProps) => css`
+  ({ hoverColor, animate }: ButtonProps) => css`
     background: transparent;
     border: 0;
     outline: 0;
-    color: ${dark ? theme.colors.primaryBlue : theme.colors.secundaryBlue};
+    color: ${theme.colors.blue};
     transition: color 0.2s;
 
     ${animate &&
@@ -91,9 +80,7 @@ export const Button = styled.button(
           color: ${hoverColor ?? 'white'};
         }
         to {
-          color: ${dark
-            ? theme.colors.primaryBlue
-            : theme.colors.secundaryBlue};
+          color: ${theme.colors.blue};
         }
       }
 
@@ -106,10 +93,7 @@ export const Button = styled.button(
             color: ${shade(0, hoverColor)};
           `
         : css`
-            color: ${shade(
-              0.5,
-              dark ? theme.colors.primaryBlue : theme.colors.secundaryBlue,
-            )};
+            color: ${shade(0.5, theme.colors.blue)};
           `}
     }
   `,

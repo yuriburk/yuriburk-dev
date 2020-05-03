@@ -22,7 +22,7 @@ export default {
         fonts: [
           {
             family: 'Montserrat',
-            variants: ['500', '800'],
+            variants: ['500', '600', '800'],
           },
         ],
       },
