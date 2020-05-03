@@ -1,5 +1,5 @@
 import React from 'react';
-import { navigate } from 'gatsby';
+import { graphql, navigate } from 'gatsby';
 import { FaChevronRight } from 'react-icons/fa';
 
 import { Container, Post, Title, ImageContainer } from './styles';
@@ -11,6 +11,7 @@ interface PostsProps {
 }
 
 const Posts: React.FC<PostsProps> = ({ data }) => {
+  console.log(data);
   const { edges } = data.allMarkdownRemark;
   const { dark } = useTheme();
 
