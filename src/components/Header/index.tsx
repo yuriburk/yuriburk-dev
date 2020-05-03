@@ -39,14 +39,13 @@ const Header: React.FC = () => {
                 <Link to="/">tags</Link>
               </li>
               <li>
-                <Button dark={dark} type="button">
+                <Button dark={dark}>
                   <FaSearch />
                 </Button>
               </li>
               <li>
                 <Button
                   dark={dark}
-                  type="button"
                   onClick={toggleTheme}
                   hoverColor="#d9dc25"
                   animate={firstLoad}
