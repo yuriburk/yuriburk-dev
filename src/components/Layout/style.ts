@@ -49,6 +49,13 @@ export default createGlobalStyle(
       }
     }
 
+    button {
+      cursor: pointer;
+      background: transparent;
+      border: 0;
+      outline: 0;
+    }
+
     .content {
       max-width: 1180px;
       margin: 0 auto;

@@ -88,9 +88,6 @@ interface ButtonProps extends ThemeProps {
 
 export const Button = styled.button(
   ({ hoverColor, animate }: ButtonProps) => css`
-    background: transparent;
-    border: 0;
-    outline: 0;
     color: ${theme.colors.blue};
     transition: color 0.2s;
 

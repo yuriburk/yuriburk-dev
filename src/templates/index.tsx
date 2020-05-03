@@ -4,22 +4,36 @@ import { graphql } from 'gatsby';
 import Posts from '../components/Posts';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
+import Pagination from '../components/Pagination';
 
 interface AppProps {
-  frontmatter: {
-    title: string;
-    tags: string[];
-    date: Date;
-    description: string;
+  data: {
+    frontmatter: {
+      title: string;
+      tags: string[];
+      date: Date;
+      description: string;
+    };
+  };
+  pageContext: {
+    humanPageNumber: number;
+    nextPagePath: string;
+    previousPagePath: string;
+    numberOfPages: number;
   };
 }
 
-const App: React.FC = ({ data, pageContext }: any) => {
-  console.log(pageContext);
+const App: React.FC<AppProps> = ({ data, pageContext }) => {
   return (
     <Layout>
       <SEO />
       <Posts data={data} />
+      <Pagination
+        currentPage={pageContext.humanPageNumber}
+        nextPagePath={pageContext.nextPagePath}
+        previousPagePath={pageContext.previousPagePath}
+        pages={pageContext.numberOfPages}
+      />
     </Layout>
   );
 };
@@ -29,7 +43,7 @@ export default App;
 export const pageQuery = graphql`
   query QueryIndex($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
-      sort: { fields: [fields___prefix], order: DESC }
+      sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { draft: { ne: true } } }
       skip: $skip
       limit: $limit

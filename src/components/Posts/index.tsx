@@ -11,7 +11,6 @@ interface PostsProps {
 }
 
 const Posts: React.FC<PostsProps> = ({ data }) => {
-  console.log(data);
   const { edges } = data.allMarkdownRemark;
   const { dark } = useTheme();
 

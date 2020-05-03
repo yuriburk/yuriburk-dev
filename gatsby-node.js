@@ -1,6 +1,7 @@
 const path = require('path');
 const _ = require('lodash');
 const { createFilePath } = require('gatsby-source-filesystem');
+const { paginate } = require('gatsby-awesome-pagination');
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
@@ -46,7 +47,7 @@ exports.createPages = ({ graphql, actions }) => {
         `
           {
             allMarkdownRemark(
-              sort: { fields: [fields___prefix], order: DESC }
+              sort: { fields: [frontmatter___date], order: DESC }
               limit: 1000
               filter: { frontmatter: { draft: { ne: true } } }
             ) {
@@ -107,18 +108,13 @@ exports.createPages = ({ graphql, actions }) => {
         /* Cria a página de posts */
         const posts = items.filter(item => item.node.fields.source === 'posts');
         const itemsPerPage = 5;
-        const numPages = Math.ceil(posts.length / itemsPerPage);
-        Array.from({ length: numPages }).forEach((_, i) => {
-          createPage({
-            path: i === 0 ? `/` : `/${i + 1}`,
-            component: indexTemplate,
-            context: {
-              limit: itemsPerPage,
-              skip: i * itemsPerPage,
-              numPages,
-              currentPage: i + 1,
-            },
-          });
+        paginate({
+          createPage,
+          items: posts,
+          itemsPerFirstPage: itemsPerPage,
+          itemsPerPage,
+          pathPrefix: '/',
+          component: indexTemplate,
         });
 
         posts.forEach(({ node }, index) => {
