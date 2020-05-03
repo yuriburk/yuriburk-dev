@@ -40,7 +40,7 @@ const Header: React.FC = () => {
               </li>
               <li>
                 <Button dark={dark} type="button">
-                  <FaSearch size={24} />
+                  <FaSearch />
                 </Button>
               </li>
               <li>
@@ -51,7 +51,7 @@ const Header: React.FC = () => {
                   hoverColor="#d9dc25"
                   animate={firstLoad}
                 >
-                  {dark ? <FaSun size={24} /> : <FaMoon size={24} />}
+                  {dark ? <FaSun /> : <FaMoon />}
                 </Button>
               </li>
             </ul>

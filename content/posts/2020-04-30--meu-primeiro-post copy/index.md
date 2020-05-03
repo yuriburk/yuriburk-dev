@@ -7,6 +7,10 @@ draft: false
 tags:
   - Post irado
   - React
+  - ReactJS
+  - adasda
+  - dsakldsaklda
+  - sdakldsad
 ---
 
 Aqui vai todo o conteúdo do seu blog, e você pode editar e escrever da maneira que mais gostar. Agora, como todo site deve ter, bora colocar um lorem ipsum:

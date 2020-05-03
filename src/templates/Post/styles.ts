@@ -9,12 +9,13 @@ export const Container = styled.div(
       : theme.colors.secundaryWhite};
     padding: 1.8rem;
     border-radius: 0.5rem;
-    margin: 10px 0;
+    margin: 10px;
 
     h2 {
       font-size: 35px;
       font-weight: 800;
       margin-bottom: 15px;
+      word-break: break-word;
     }
 
     p {
