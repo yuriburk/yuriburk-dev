@@ -27,7 +27,7 @@ export const Title = styled.div(
     a {
       text-decoration: none;
       font-weight: 800;
-      font-size: 22px;
+      font-size: 25px;
       color: ${dark ? theme.colors.primaryBlue : theme.colors.secundaryBlue};
       transition: color 0.2s;
 
