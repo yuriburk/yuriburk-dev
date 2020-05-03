@@ -16,6 +16,11 @@ export const Container = styled.div(
       font-weight: 800;
       margin-bottom: 15px;
       word-break: break-word;
+
+      ${theme.screenSizes.lg} {
+        font-size: 25px;
+        text-align: center;
+      }
     }
 
     p {

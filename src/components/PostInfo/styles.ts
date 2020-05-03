@@ -45,6 +45,7 @@ export const TagContainer = styled.div`
 
   ${theme.screenSizes.lg} {
     justify-content: center;
+    margin-bottom: 10px;
   }
 `;
 
@@ -66,5 +67,9 @@ export const Tag = styled.a(
         background-color: ${shade(0.5, theme.colors.blue)};
       }
     `}
+
+    ${theme.screenSizes.lg} {
+      margin: 2.5px 5px 2.5px 0;
+    }
   `,
 );
