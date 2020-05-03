@@ -42,7 +42,11 @@ export default createGlobalStyle(
       flex: 0 0 29%;
       max-width: 29%;
       flex-direction: column;
-      padding: 10px 0 0 15px;
+      padding: 10px 0;
+
+      ${theme.screenSizes.xl} {
+        display: none;
+      }
     }
 
     .content {

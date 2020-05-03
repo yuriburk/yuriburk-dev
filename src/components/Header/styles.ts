@@ -10,6 +10,10 @@ export const Container = styled.header(
       ? theme.colors.secundaryDark
       : theme.colors.secundaryWhite};
     box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.15);
+
+    ${theme.screenSizes.lg} {
+      padding-right: 0;
+    }
   `,
 );
 
@@ -20,10 +24,15 @@ export const Items = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  ${theme.screenSizes.xl} {
+    padding-right: 0;
+  }
 `;
 
 export const Title = styled.div`
   transition: transform 0.1s cubic-bezier(0, 1.8, 1, 1.8);
+
   &:hover {
     transform: scale(1.1);
   }
@@ -34,6 +43,10 @@ export const Title = styled.div`
     font-size: 25px;
     color: ${theme.colors.blue};
     transition: color 0.2s;
+
+    ${theme.screenSizes.lg} {
+      font-size: 20px;
+    }
   }
 `;
 
@@ -46,6 +59,14 @@ export const Navigation = styled.div`
       justify-content: center;
       align-items: center;
       margin: 0px 1rem;
+
+      ${theme.screenSizes.lg} {
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3) {
+          display: none;
+        }
+      }
 
       a {
         color: ${theme.colors.blue};
@@ -95,6 +116,16 @@ export const Button = styled.button(
         : css`
             color: ${shade(0.5, theme.colors.blue)};
           `}
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+
+      ${theme.screenSizes.lg} {
+        width: 20px;
+        height: 20px;
+      }
     }
   `,
 );

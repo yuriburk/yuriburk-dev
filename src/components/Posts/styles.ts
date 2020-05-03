@@ -3,12 +3,7 @@ import styled, { css } from 'styled-components';
 import { theme, ThemeProps } from '../../styles/themes';
 
 export const Container = styled.div`
-  padding: 10px 0;
-
-  h2 {
-    font-size: 22px;
-    font-weight: bold;
-  }
+  padding: 10px;
 
   p {
     .post-date {
@@ -43,9 +38,35 @@ export const Post = styled.div(
 
 export const Title = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   color: ${theme.colors.blue};
+  word-break: break-word;
+
+  ${theme.screenSizes.lg} {
+    text-align: center;
+    justify-content: center;
+  }
+
+  h2 {
+    font-size: 25.5px;
+    font-weight: 800;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  svg {
+    min-width: 25px;
+    min-height: 25px;
+    margin-left: 25px;
+
+    ${theme.screenSizes.lg} {
+      display: none;
+    }
+  }
 `;
 
 interface ImageProps {
@@ -54,11 +75,15 @@ interface ImageProps {
 
 export const ImageContainer = styled.div<ImageProps>`
   display: flex;
-  flex: 1 1 40%;
+  flex: 1 0 25%;
   background-image: url(${props => props.url});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   margin-right: 15px;
   border-radius: 5px;
+
+  ${theme.screenSizes.lg} {
+    display: none;
+  }
 `;

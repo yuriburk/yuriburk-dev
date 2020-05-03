@@ -7,7 +7,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 25px 0;
+  margin: 15px 0 25px;
 
   a {
     font-size: 15px;
@@ -23,19 +23,28 @@ export const Container = styled.div`
   p {
     font-size: 15px;
   }
+
+  ${theme.screenSizes.lg} {
+    flex-direction: column;
+
+    svg {
+      display: none;
+    }
+  }
 `;
 
 export const TagContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-
   cursor: pointer;
+
   a {
     text-decoration: none;
+  }
 
-    & + a {
-      margin-left: 10px;
-    }
+  ${theme.screenSizes.lg} {
+    justify-content: center;
   }
 `;
 
@@ -47,6 +56,7 @@ export const Tag = styled.a(
   ({ clickable }: TagProps) => css`
     padding: 5px 5px;
     border-radius: 5px;
+    margin: 10px 10px 10px 0;
     background-color: ${theme.colors.blue};
     transition: background-color 0.2s;
 
