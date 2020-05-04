@@ -2,8 +2,8 @@ backend:
   name: github
   repo: yuriburk/yuriburk-dev
 
-media_folder: static/assets
-public_folder: /assets
+media_folder: static/img/posts
+public_folder: /img/posts
 
 collections:
   - name: blog
