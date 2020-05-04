@@ -42,9 +42,16 @@ export default createGlobalStyle(
       cursor: pointer;
     }
 
+    main {
+      flex: 0 0 71%;
+
+      ${theme.screenSizes.xl} {
+        flex: 1 1 100%;
+      }
+    }
+
     aside {
       flex: 0 0 29%;
-      max-width: 29%;
       flex-direction: column;
       padding: 10px 0;
 

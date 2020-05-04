@@ -2,7 +2,13 @@ import React from 'react';
 import { navigate } from 'gatsby';
 import { FaChevronRight } from 'react-icons/fa';
 
-import { Container, Post, Title, ImageContainer } from './styles';
+import {
+  Container,
+  Post,
+  ImageContainer,
+  InfoContainer,
+  TitleContainer,
+} from './styles';
 import { useTheme } from '../../hooks/theme';
 import PostInfo from '../PostInfo';
 
@@ -25,18 +31,18 @@ const Posts: React.FC<PostsProps> = ({ data }) => {
           {node.frontmatter.image && (
             <ImageContainer url={node.frontmatter.image.publicURL} />
           )}
-          <div>
-            <Title>
+          <InfoContainer>
+            <TitleContainer>
               <h2>{node.frontmatter.title}</h2>
               <FaChevronRight />
-            </Title>
+            </TitleContainer>
             <PostInfo
               tags={node.frontmatter.tags}
               date={node.frontmatter.date}
               timeToRead={node.timeToRead}
             />
             <p>{node.frontmatter.description}</p>
-          </div>
+          </InfoContainer>
         </Post>
       ))}
     </Container>
