@@ -18,6 +18,10 @@ export const Post = styled.div(
     flex-direction: row;
     justify-content: center;
 
+    ${theme.screenSizes.lg} {
+      flex-direction: column;
+    }
+
     cursor: pointer;
     padding: 1.5rem;
     margin-bottom: 1rem;
@@ -36,29 +40,39 @@ export const Post = styled.div(
   `,
 );
 
-interface ImageProps {
-  url?: string;
-}
-
-export const ImageContainer = styled.div<ImageProps>`
+export const ImageContainer = styled.div`
   display: flex;
   flex: 1 1 25%;
-  background-image: url(${props => props.url});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   margin-right: 15px;
-  border-radius: 5px;
 
   ${theme.screenSizes.lg} {
-    display: none;
+    margin-right: 0px;
+    justify-content: center;
   }
+
+  img {
+    border-radius: 5px;
+
+    ${theme.screenSizes.lg} {
+      width: 80px;
+      margin-bottom: 15px;
+    }
+  }
+
+  /* ${theme.screenSizes.lg} {
+    display: none;
+  } */
 `;
 
 export const InfoContainer = styled.div`
   display: flex;
   flex: 1 1 75%;
   flex-direction: column;
+
+  ${theme.screenSizes.lg} {
+    text-align: center;
+    justify-content: center;
+  }
 `;
 
 export const TitleContainer = styled.div`

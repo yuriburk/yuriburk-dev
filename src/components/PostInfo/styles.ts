@@ -5,9 +5,19 @@ import { theme } from '../../styles/themes';
 
 export const Container = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
   margin: 15px 0 25px;
+
+  h1 {
+    font-size: 35px;
+    font-weight: 800;
+    word-break: break-word;
+    margin-bottom: 10px;
+
+    ${theme.screenSizes.lg} {
+      text-align: center;
+    }
+  }
 
   a {
     font-size: 15px;
@@ -30,6 +40,16 @@ export const Container = styled.div`
     svg {
       display: none;
     }
+  }
+`;
+
+export const Info = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  ${theme.screenSizes.lg} {
+    flex-direction: column;
   }
 `;
 

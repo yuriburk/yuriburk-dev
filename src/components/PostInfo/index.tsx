@@ -3,9 +3,10 @@ import { navigate } from 'gatsby';
 import { FaCircle } from 'react-icons/fa';
 import { kebabCase } from 'lodash';
 
-import { Container, TagContainer, Tag } from './styles';
+import { Container, Info, TagContainer, Tag } from './styles';
 
 interface InfoProps {
+  title?: string;
   tags: string[];
   date: Date;
   timeToRead: number;
@@ -13,6 +14,7 @@ interface InfoProps {
 }
 
 const PostInfo: React.FC<InfoProps> = ({
+  title,
   tags,
   date,
   timeToRead,
@@ -29,17 +31,24 @@ const PostInfo: React.FC<InfoProps> = ({
 
   return (
     <Container>
-      <TagContainer>
-        {tags?.map(tag => (
-          <Tag key={tag} clickable={clickable} onClick={() => handleClick(tag)}>
-            {tag}
-          </Tag>
-        ))}
-      </TagContainer>
-      <FaCircle size={5} />
-      <p>{date}</p>
-      <FaCircle size={5} />
-      <p>{timeToRead} min de leitura</p>
+      {title && <h1>{title}</h1>}
+      <Info>
+        <TagContainer>
+          {tags?.map(tag => (
+            <Tag
+              key={tag}
+              clickable={clickable}
+              onClick={() => handleClick(tag)}
+            >
+              {tag}
+            </Tag>
+          ))}
+        </TagContainer>
+        <FaCircle size={5} />
+        <p>{date}</p>
+        <FaCircle size={5} />
+        <p>{timeToRead} min de leitura</p>
+      </Info>
     </Container>
   );
 };

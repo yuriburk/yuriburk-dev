@@ -29,7 +29,12 @@ const Posts: React.FC<PostsProps> = ({ data }) => {
           onClick={() => navigate(node.fields.slug)}
         >
           {node.frontmatter.image && (
-            <ImageContainer url={node.frontmatter.image} />
+            <ImageContainer>
+              <img
+                src="https://tender-curran-293ad9.netlify.app/img/posts/icon.png"
+                alt="t"
+              />
+            </ImageContainer>
           )}
           <InfoContainer>
             <TitleContainer>
