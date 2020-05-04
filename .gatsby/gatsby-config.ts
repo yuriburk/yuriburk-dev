@@ -1,4 +1,4 @@
-import config from '../config';
+import config from '../data/config';
 import path from 'path';
 
 export default {
