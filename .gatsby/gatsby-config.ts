@@ -2,9 +2,9 @@ import config from '../data/config';
 
 export default {
   siteMetadata: {
-    title: 'Yuri Burk',
-    description: 'O melhor blog de programação do Brasil :)',
-    siteUrl: 'https://yuriburkdev.web.app/',
+    title: config.siteTitle,
+    description: config.siteDescription,
+    siteUrl: config.siteUrl,
   },
   plugins: [
     'gatsby-plugin-typescript',
