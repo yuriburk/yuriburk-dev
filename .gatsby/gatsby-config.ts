@@ -32,14 +32,14 @@ export default {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',
-        path: `${__dirname}\\..\\content\\posts`,
+        path: `${config.dirName}\\..\\content\\posts`,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: `${__dirname}\\..\\content\\images`,
+        path: `${config.dirName}\\..\\content\\images`,
       },
     },
     {
