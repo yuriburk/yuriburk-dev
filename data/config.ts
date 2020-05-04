@@ -8,7 +8,6 @@ const config = {
   themeColor: '#000000',
   backgroundColor: '#1a1a1a',
   siteUrl: 'https://yuriburkdev.web.app/',
-  dirName: `${__dirname}`,
 };
 
 export default config;
