@@ -1,4 +1,5 @@
 import config from '../config';
+import path from 'path';
 
 export default {
   siteMetadata: {
@@ -32,14 +33,14 @@ export default {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',
-        path: `${config.dirName}\\content\\posts`,
+        path: path.resolve(`${config.dirName}`, 'content', 'posts'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: `${config.dirName}\\content\\images`,
+        path: path.resolve(`${config.dirName}`, 'content', 'images'),
       },
     },
     {
