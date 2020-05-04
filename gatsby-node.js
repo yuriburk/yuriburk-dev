@@ -107,16 +107,6 @@ exports.createPages = ({ graphql, actions }) => {
 
         /* Cria a página de posts */
         const posts = items.filter(item => item.node.fields.source === 'posts');
-        const itemsPerPage = 5;
-        paginate({
-          createPage,
-          items: posts,
-          itemsPerFirstPage: itemsPerPage,
-          itemsPerPage,
-          pathPrefix: '/',
-          component: indexTemplate,
-        });
-
         posts.forEach(({ node }, index) => {
           const { slug, source } = node.fields;
           createPage({
@@ -127,6 +117,16 @@ exports.createPages = ({ graphql, actions }) => {
               source,
             },
           });
+        });
+
+        const itemsPerPage = 5;
+        paginate({
+          createPage,
+          items: posts,
+          itemsPerFirstPage: itemsPerPage,
+          itemsPerPage,
+          pathPrefix: '/',
+          component: indexTemplate,
         });
       }),
     );

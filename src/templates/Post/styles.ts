@@ -31,6 +31,10 @@ export const Container = styled.div(
       font-size: 32px;
     }
 
+    img {
+      margin-bottom: 25px;
+    }
+
     p {
       a {
         margin-right: 10px;
@@ -40,21 +44,22 @@ export const Container = styled.div(
     .flex-center {
       display: flex;
       justify-content: center;
+      flex: 1 1 100%;
     }
 
     .content {
-      p {
-        line-height: 1.5;
-        text-align: justify;
-        margin: 22px 0px;
-      }
-
-      pre {
+      * {
         white-space: pre-wrap;
         white-space: -moz-pre-wrap;
         white-space: -pre-wrap;
         white-space: -o-pre-wrap;
         word-wrap: break-word;
+      }
+
+      p {
+        line-height: 1.5;
+        text-align: justify;
+        margin: 22px 0px;
       }
     }
   `,

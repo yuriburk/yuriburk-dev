@@ -36,7 +36,32 @@ export const Post = styled.div(
   `,
 );
 
-export const Title = styled.div`
+interface ImageProps {
+  url?: string;
+}
+
+export const ImageContainer = styled.div<ImageProps>`
+  display: flex;
+  flex: 1 1 25%;
+  background-image: url(${props => props.url});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 15px;
+  border-radius: 5px;
+
+  ${theme.screenSizes.lg} {
+    display: none;
+  }
+`;
+
+export const InfoContainer = styled.div`
+  display: flex;
+  flex: 1 1 75%;
+  flex-direction: column;
+`;
+
+export const TitleContainer = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -66,24 +91,5 @@ export const Title = styled.div`
     ${theme.screenSizes.lg} {
       display: none;
     }
-  }
-`;
-
-interface ImageProps {
-  url?: string;
-}
-
-export const ImageContainer = styled.div<ImageProps>`
-  display: flex;
-  flex: 1 0 25%;
-  background-image: url(${props => props.url});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-right: 15px;
-  border-radius: 5px;
-
-  ${theme.screenSizes.lg} {
-    display: none;
   }
 `;
