@@ -2,9 +2,9 @@ import config from '../data/config';
 
 export default {
   siteMetadata: {
-    title: config.siteTitle,
-    description: config.siteDescription,
-    siteUrl: config.siteUrl,
+    title: 'Yuri Burk',
+    description: 'O melhor blog de programação do Brasil :)',
+    siteUrl: 'https://yuriburkdev.web.app/',
   },
   plugins: [
     'gatsby-plugin-typescript',
@@ -16,6 +16,7 @@ export default {
     'gatsby-plugin-sitemap',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-polished',
+    'gatsby-plugin-netlify-cms',
     {
       resolve: 'gatsby-plugin-prefetch-google-fonts',
       options: {
