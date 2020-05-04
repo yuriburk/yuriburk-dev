@@ -22,7 +22,9 @@ const Posts: React.FC<PostsProps> = ({ data }) => {
           key={node.fields.slug}
           onClick={() => navigate(node.fields.slug)}
         >
-          <ImageContainer url={node.frontmatter.image.publicURL} />
+          {node.frontmatter.image && (
+            <ImageContainer url={node.frontmatter.image.publicURL} />
+          )}
           <div>
             <Title>
               <h2>{node.frontmatter.title}</h2>
