@@ -38,8 +38,13 @@ const Post: React.FC<PostProps> = ({ data }) => {
     <Layout>
       <Container dark={dark}>
         <SEO title={title} url={slug} description={description} article />
-        <h1>{title}</h1>
-        <PostInfo tags={tags} date={date} timeToRead={timeToRead} clickable />
+        <PostInfo
+          title={title}
+          tags={tags}
+          date={date}
+          timeToRead={timeToRead}
+          clickable
+        />
         <div className="content">
           <div className="flex-center">
             {image && <img src={image} alt="post-img" />}

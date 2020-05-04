@@ -4,6 +4,8 @@ import { ThemeProps } from '../../styles/themes';
 
 export const Container = styled.div(
   ({ dark, theme }: ThemeProps) => css`
+    display: flex;
+    flex-direction: column;
     background-color: ${dark
       ? theme.colors.secundaryDark
       : theme.colors.secundaryWhite};
@@ -11,56 +13,57 @@ export const Container = styled.div(
     border-radius: 0.5rem;
     margin: 10px;
 
-    h1,
-    h2 {
-      font-weight: 800;
-      margin-bottom: 15px;
-      word-break: break-word;
-
-      ${theme.screenSizes.lg} {
-        font-size: 25px;
-        text-align: center;
-      }
-    }
-
-    h1 {
-      font-size: 35px;
-    }
-
-    h2 {
-      font-size: 32px;
-    }
-
-    img {
-      margin-bottom: 25px;
-    }
-
-    p {
-      a {
-        margin-right: 10px;
-      }
-    }
-
-    .flex-center {
-      display: flex;
-      justify-content: center;
-      flex: 1 1 100%;
-    }
-
     .content {
-      * {
+      display: flex;
+      flex-direction: column;
+
+      img {
+        margin: 25px;
+      }
+
+      h1 {
+        font-size: 35px;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-weight: 800;
+        word-break: break-word;
+        margin: 25px 0;
+      }
+
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-size: 28px;
+      }
+
+      p {
+        line-height: 1.5;
+        text-align: justify;
+      }
+
+      a {
+        text-decoration: none;
+        color: ${theme.colors.blue};
+      }
+
+      pre {
         white-space: pre-wrap;
         white-space: -moz-pre-wrap;
         white-space: -pre-wrap;
         white-space: -o-pre-wrap;
         word-wrap: break-word;
       }
+    }
 
-      p {
-        line-height: 1.5;
-        text-align: justify;
-        margin: 22px 0px;
-      }
+    .content .flex-center {
+      display: flex;
+      justify-content: center;
     }
   `,
 );

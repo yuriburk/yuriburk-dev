@@ -8,6 +8,7 @@ tags:
   - react
   - node
 ---
+
 <h1>🚀 YuriBurk.dev</h1>
 
 YuriBurk.dev é um blog pessoal sendo criado como forma de estudo, usando como base meu aprendizado no curso <a href="https://rocketseat.com.br/gostack">GoStack Bootcamp</a> e o artigo <a href="https://www.joaopedro.cc/blog-com-gatsby-e-react-parte-1">Criando um blog com Gatsby e React</a>, além de outras diversas consultas.
