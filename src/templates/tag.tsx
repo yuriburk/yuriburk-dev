@@ -38,7 +38,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       limit: 1000
       sort: { fields: [fields___prefix], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] }, draft: { ne: true } } }
+      filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
       edges {
         node {
@@ -50,9 +50,7 @@ export const pageQuery = graphql`
             date(formatString: "DD/MM/YYYY")
             tags
             description
-            image {
-              publicURL
-            }
+            image
           }
         }
       }

@@ -44,7 +44,6 @@ export const pageQuery = graphql`
   query QueryIndex($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { draft: { ne: true } } }
       skip: $skip
       limit: $limit
     ) {
@@ -59,9 +58,7 @@ export const pageQuery = graphql`
             tags
             date(formatString: "DD/MM/YYYY")
             description
-            image {
-              publicURL
-            }
+            image
           }
         }
       }
