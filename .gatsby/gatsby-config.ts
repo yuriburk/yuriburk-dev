@@ -11,7 +11,6 @@ export default {
     'gatsby-plugin-typescript',
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    'gatsby-transformer-remark',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-offline',
     'gatsby-plugin-sitemap',
@@ -51,6 +50,16 @@ export default {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 800,
+            },
+          },
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              aliases: {
+                sh: 'bash',
+                react: 'jsx',
+                txt: '',
+              },
             },
           },
         ],
