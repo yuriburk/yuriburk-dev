@@ -17,9 +17,7 @@ interface PostProps {
         tags: string[];
         date: Date;
         description: string;
-        image: {
-          publicURL: string;
-        };
+        image: string;
       };
       fields: {
         slug: string;
@@ -44,7 +42,7 @@ const Post: React.FC<PostProps> = ({ data }) => {
         <PostInfo tags={tags} date={date} timeToRead={timeToRead} clickable />
         <div className="content">
           <div className="flex-center">
-            {image && <img src={image.publicURL} alt="post-img" />}
+            {image && <img src={image} alt="post-img" />}
           </div>
           <ReactMarkdown source={html} escapeHtml={false} />
         </div>
@@ -66,9 +64,7 @@ export const pageQuery = graphql`
         date(formatString: "DD/MM/YYYY")
         tags
         description
-        image {
-          publicURL
-        }
+        image
       }
       fields {
         slug

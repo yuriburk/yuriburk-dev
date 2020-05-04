@@ -49,7 +49,6 @@ exports.createPages = ({ graphql, actions }) => {
             allMarkdownRemark(
               sort: { fields: [frontmatter___date], order: DESC }
               limit: 1000
-              filter: { frontmatter: { draft: { ne: true } } }
             ) {
               edges {
                 node {
@@ -61,9 +60,7 @@ exports.createPages = ({ graphql, actions }) => {
                   }
                   frontmatter {
                     title
-                    image {
-                      publicURL
-                    }
+                    image
                     tags
                   }
                 }
