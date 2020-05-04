@@ -8,7 +8,7 @@ public_folder: /assets
 collections:
   - name: blog
     label: Blog
-    folder: blog
+    folder: content/posts
     create: true
     fields:
       - { name: path, label: Path }
