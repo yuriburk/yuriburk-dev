@@ -37,15 +37,25 @@ export const Container = styled.div(
       }
     }
 
-    .content p {
-      line-height: 1.5;
-      text-align: justify;
-      margin: 22px 0px;
-    }
-
     .flex-center {
       display: flex;
       justify-content: center;
+    }
+
+    .content {
+      p {
+        line-height: 1.5;
+        text-align: justify;
+        margin: 22px 0px;
+      }
+
+      pre {
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -pre-wrap;
+        white-space: -o-pre-wrap;
+        word-wrap: break-word;
+      }
     }
   `,
 );
