@@ -40,11 +40,11 @@ const Post: React.FC<PostProps> = ({ data }) => {
     <Layout>
       <Container dark={dark}>
         <SEO title={title} url={slug} description={description} article />
-        <h2>{title}</h2>
+        <h1>{title}</h1>
         <PostInfo tags={tags} date={date} timeToRead={timeToRead} clickable />
         <div className="content">
           <div className="flex-center">
-            <img src={image.publicURL} alt="post-img" />
+            {image && <img src={image.publicURL} alt="post-img" />}
           </div>
           <ReactMarkdown source={html} escapeHtml={false} />
         </div>

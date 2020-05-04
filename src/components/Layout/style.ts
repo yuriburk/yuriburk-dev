@@ -24,7 +24,11 @@ export default createGlobalStyle(
       height: 100%;
     }
 
-    h2 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
       color: ${theme.colors.blue};
     }
 

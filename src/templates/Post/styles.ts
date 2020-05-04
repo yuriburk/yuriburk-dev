@@ -11,8 +11,8 @@ export const Container = styled.div(
     border-radius: 0.5rem;
     margin: 10px;
 
+    h1,
     h2 {
-      font-size: 35px;
       font-weight: 800;
       margin-bottom: 15px;
       word-break: break-word;
@@ -21,6 +21,14 @@ export const Container = styled.div(
         font-size: 25px;
         text-align: center;
       }
+    }
+
+    h1 {
+      font-size: 35px;
+    }
+
+    h2 {
+      font-size: 32px;
     }
 
     p {
