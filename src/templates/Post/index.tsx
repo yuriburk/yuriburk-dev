@@ -7,6 +7,7 @@ import SEO from '../../components/SEO';
 import { Container } from './styles';
 import { useTheme } from '../../hooks/theme';
 import PostInfo from '../../components/PostInfo';
+import CodeBlock from '../../components/CodeBlock';
 
 interface PostProps {
   data: {
@@ -49,7 +50,7 @@ const Post: React.FC<PostProps> = ({ data }) => {
           <div className="flex-center">
             {image && <img src={image} alt="post-img" />}
           </div>
-          <ReactMarkdown source={html} escapeHtml={false} />
+          <div dangerouslySetInnerHTML={{ __html: html }} />
         </div>
       </Container>
     </Layout>

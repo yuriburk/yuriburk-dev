@@ -25,6 +25,17 @@ export const Container = styled.div(
         font-size: 35px;
       }
 
+      ul {
+        list-style: disc;
+        margin-left: 21px;
+      }
+
+      ol {
+        li {
+          margin-left: 21px;
+        }
+      }
+
       h1,
       h2,
       h3,
@@ -48,11 +59,10 @@ export const Container = styled.div(
       }
 
       a {
-        text-decoration: none;
         color: ${theme.colors.blue};
       }
 
-      pre {
+      code {
         white-space: pre-wrap;
         white-space: -moz-pre-wrap;
         white-space: -pre-wrap;
