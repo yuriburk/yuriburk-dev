@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, navigate } from 'gatsby';
+import { navigate } from 'gatsby';
 import { FaChevronRight } from 'react-icons/fa';
 
 import { Container, Post, Title, ImageContainer } from './styles';

@@ -20,13 +20,14 @@ const Pagination: React.FC<PaginationProps> = ({
     {currentPage > 1 && (
       <Page to={previousPagePath}>
         <FaArrowLeft size={20} />
-        Página anterior
+        <p>Página anterior</p>
       </Page>
     )}
     {currentPage > 1 && currentPage < pages && <p>|</p>}
     {currentPage < pages && (
       <Page to={nextPagePath}>
-        Próxima página <FaArrowRight size={20} />
+        <p>Próxima página</p>
+        <FaArrowRight size={20} />
       </Page>
     )}
   </Container>

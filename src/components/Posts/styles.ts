@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { theme, ThemeProps } from '../../styles/themes';
 
 export const Container = styled.div`
-  padding: 10px 10px 10px 0;
+  padding: 10px;
 
   p {
     .post-date {
