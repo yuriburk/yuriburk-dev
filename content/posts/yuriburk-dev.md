@@ -35,7 +35,7 @@ Para executar o projeto:
    ```javascript
    const config = {
      siteTitle: 'Yuri Burk',
-     siteDescription: 'Descrição do melhor blog de programação do Brasil :)',
+     siteDescription: 'Descrição do melhor blog de programação do Brasil',
      siteTitleShort: 'Yuri Burk',
      siteRss: '/rss.xml',
      siteImage: '',
