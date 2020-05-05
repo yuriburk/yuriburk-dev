@@ -1,13 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import ReactMarkdown from 'react-markdown/with-html';
 
 import Layout from '../../components/Layout';
 import SEO from '../../components/SEO';
 import { Container } from './styles';
 import { useTheme } from '../../hooks/theme';
 import PostInfo from '../../components/PostInfo';
-import CodeBlock from '../../components/CodeBlock';
 
 interface PostProps {
   data: {
@@ -38,7 +36,13 @@ const Post: React.FC<PostProps> = ({ data }) => {
   return (
     <Layout>
       <Container dark={dark}>
-        <SEO title={title} url={slug} description={description} article />
+        <SEO
+          title={title}
+          url={slug}
+          description={description}
+          article
+          datePublished={date}
+        />
         <PostInfo
           title={title}
           tags={tags}
