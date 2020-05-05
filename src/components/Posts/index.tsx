@@ -30,10 +30,7 @@ const Posts: React.FC<PostsProps> = ({ data }) => {
         >
           {node.frontmatter.image && (
             <ImageContainer>
-              <img
-                src="https://tender-curran-293ad9.netlify.app/img/posts/icon.png"
-                alt="t"
-              />
+              <img src={node.frontmatter.image} alt="post-img" />
             </ImageContainer>
           )}
           <InfoContainer>
