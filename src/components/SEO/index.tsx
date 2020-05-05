@@ -1,20 +1,30 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+
 import config from '../../../data/config';
+import SchemaOrg from './SchemaOrg';
 
 interface SEOProps {
   title?: string;
   description?: string;
   url?: string;
   article?: boolean;
+  datePublished?: Date;
 }
 
-const SEO: React.FC<SEOProps> = ({ title, description, url, article }) => {
+const SEO: React.FC<SEOProps> = ({
+  title,
+  description,
+  url,
+  article,
+  datePublished,
+}) => {
   const seo = {
     title: title ? `${title} | ${config.siteTitle}` : config.siteTitle,
     description: description || config.siteDescription,
     image: config.siteImage,
     url: url ? `${config.siteUrl}${url}` : '',
+    datePublished: article ? datePublished : false,
   };
 
   return (
@@ -40,6 +50,22 @@ const SEO: React.FC<SEOProps> = ({ title, description, url, article }) => {
         )}
         {seo.image && <meta name="twitter:image" content={seo.image} />}
       </Helmet>
+      <SchemaOrg
+        author={{ name: config.siteTitle }}
+        siteUrl={config.siteUrl}
+        datePublished={datePublished}
+        defaultTitle={seo.title}
+        article={!!article}
+        description={description}
+        image={config.siteDescription}
+        organization={{
+          logo: config.siteImage,
+          name: config.siteTitle,
+          url: seo.url,
+        }}
+        title={seo.title}
+        url={seo.url}
+      />
     </>
   );
 };
