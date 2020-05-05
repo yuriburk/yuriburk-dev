@@ -5,8 +5,8 @@ title: YuriBurk.dev
 image: /img/posts/icon.png
 description: YuriBurk.dev is a personal blog created with Gatsby using Typescript
 tags:
-  - react
-  - node
+  - React
+  - Gatsby
 ---
 
 <h1>🚀 YuriBurk.dev</h1>
