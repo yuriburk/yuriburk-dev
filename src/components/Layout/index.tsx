@@ -1,8 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 
-import favicon from '../../../static/favicon.png';
-import config from '../../../data/config';
 import Header from '../Header';
 import Container from '../Container';
 import GlobalStyle from './style';
@@ -14,10 +11,6 @@ const Layout: React.FC = ({ children }) => {
 
   return (
     <div>
-      <Helmet>
-        <meta name="description" content={config.siteDescription} />
-        <link rel="icon" href={favicon} />
-      </Helmet>
       <Header />
       <div className="content">
         <Container>

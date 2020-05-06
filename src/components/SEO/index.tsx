@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 
 import config from '../../../data/config';
 import SchemaOrg from './SchemaOrg';
+import favicon from '../../../static/favicon.png';
 
 interface SEOProps {
   title?: string;
@@ -30,7 +31,13 @@ const SEO: React.FC<SEOProps> = ({
   return (
     <>
       <Helmet title={seo.title}>
+        <html lang="pt" />
+        <link rel="icon" href={favicon} />
         <meta name="description" content={seo.description} />
+        <meta
+          name="google-site-verification"
+          content="1NZyEp6rzmtcGb5--X8tHKHI0zDzbQ1vmaCGp2ckZdc"
+        />
         <meta name="image" content={seo.image} />
         {seo.url && <meta property="og:url" content={seo.url} />}
         {article ? (
