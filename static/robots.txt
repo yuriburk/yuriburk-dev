@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 Disallow: /404
 
-sitemap: https://codestackbrasil.netlify.com/sitemap.xml
+sitemap: https://yuriburk.netlify.app/sitemap.xml
