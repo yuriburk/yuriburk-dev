@@ -4,13 +4,23 @@ import { ThemeProps } from '../../styles/themes';
 
 export const Container = styled.div(
   ({ dark, theme }: ThemeProps) => css`
-    display: flex;
-    flex-direction: column;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
     background-color: ${dark
       ? theme.colors.secundaryDark
       : theme.colors.secundaryWhite};
-    padding: 1.8rem;
-    border-radius: 0.5rem;
-    margin: 10px;
+
+    h2 {
+      /* text-align: center; */
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    p {
+      text-align: justify;
+      margin-top: 1rem;
+      line-height: 1.5;
+    }
   `,
 );

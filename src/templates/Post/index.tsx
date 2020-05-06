@@ -6,6 +6,7 @@ import SEO from '../../components/SEO';
 import { Container } from './styles';
 import { useTheme } from '../../hooks/theme';
 import PostInfo from '../../components/PostInfo';
+import Content from '../../components/Content';
 
 interface PostProps {
   data: {
@@ -50,12 +51,7 @@ const Post: React.FC<PostProps> = ({ data }) => {
           timeToRead={timeToRead}
           clickable
         />
-        <div className="content">
-          <div className="flex-center">
-            {image && <img src={image} alt="post-img" />}
-          </div>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
-        </div>
+        <Content image={image} html={html} />
       </Container>
     </Layout>
   );
