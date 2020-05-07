@@ -11,6 +11,6 @@ export const Container = styled.div(
       : theme.colors.secundaryWhite};
     padding: 1.8rem;
     border-radius: 0.5rem;
-    margin: 10px;
+    margin: 0 10px;
   `,
 );
