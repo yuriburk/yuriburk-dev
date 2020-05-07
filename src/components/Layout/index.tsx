@@ -20,7 +20,7 @@ const Layout: React.FC = ({ children }) => {
             <Sidebar title="Minhas Redes">
               <Socials />
             </Sidebar>
-            <Sidebar title="Categorias">
+            <Sidebar title="Principais Assuntos">
               <Category title="React.js" />
               <Category title="React Native" />
               <Category title="Gatsby" />

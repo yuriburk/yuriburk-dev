@@ -4,10 +4,9 @@ title: Desenvolvimento do meu blog com Gatsby
 image: /img/posts/icon.png
 description: YuriBurk.dev is a personal blog created with Gatsby using Typescript
 tags:
-  - Gatsy
-  - React
+  - Gatsby
+  - React.js
 ---
-
 
 <h1>🚀 YuriBurk.dev</h1>
 
@@ -17,11 +16,11 @@ YuriBurk.dev é um blog pessoal sendo criado como forma de estudo, usando como b
 
 Neste projeto, as tecnologias abordadas são:
 
-* React
-* Gatsby
-* Typescript
-* Styled-Components
-* GraphQL
+- React
+- Gatsby
+- Typescript
+- Styled-Components
+- GraphQL
 
 <h2>👨‍💻 Instalando</h2>
 

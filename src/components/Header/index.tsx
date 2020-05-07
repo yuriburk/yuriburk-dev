@@ -1,13 +1,14 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { Link } from 'gatsby';
-import { FaSun, FaMoon, FaSearch } from 'react-icons/fa';
+import { FaSearch, FaSun, FaMoon } from 'react-icons/fa';
 
 import { useTheme } from '../../hooks/theme';
-import { Container, Items, Title, Navigation, Button } from './styles';
+import { Container, Items, Title, Navigation, Search, Button } from './styles';
 
 const Header: React.FC = () => {
   const { dark, toggleTheme } = useTheme();
   const [firstLoad, setFirstLoad] = useState(false);
+  const [searching, setSearching] = useState(false);
 
   const checkFirstPageLoad = useCallback(() => {
     const firstPageLoad = localStorage.getItem('@YuriBurk.dev:firstLoad');
@@ -26,20 +27,26 @@ const Header: React.FC = () => {
         <Title>
           <Link to="/">{'<YuriBurk />'}</Link>
         </Title>
-        <Navigation>
+        <Navigation searching={searching}>
           <nav>
             <ul>
-              <li>
-                <Link to="/">home</Link>
-              </li>
-              <li>
-                <Link to="/">about</Link>
-              </li>
-              <li>
-                <Button dark={dark}>
-                  <FaSearch />
-                </Button>
-              </li>
+              <Search>
+                <li>
+                  <Link to="/">home</Link>
+                </li>
+                <li>
+                  <Link to="/">tags</Link>
+                </li>
+                <li>
+                  <Link to="/">about</Link>
+                </li>
+                <input />
+                <li>
+                  <Button dark onClick={() => setSearching(!searching)}>
+                    <FaSearch />
+                  </Button>
+                </li>
+              </Search>
               <li>
                 <Button
                   dark={dark}
