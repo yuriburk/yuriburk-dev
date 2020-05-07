@@ -22,7 +22,6 @@ export const Container = styled.div(
 
     p {
       text-align: justify;
-      margin-top: 1rem;
       line-height: 1.5;
     }
 

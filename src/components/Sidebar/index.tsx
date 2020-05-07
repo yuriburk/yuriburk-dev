@@ -4,7 +4,7 @@ import { Container } from './styles';
 import { useTheme } from '../../hooks/theme';
 
 interface SidebarProps {
-  title: string;
+  title?: string;
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ title, children }) => {
@@ -12,7 +12,7 @@ const Sidebar: React.FC<SidebarProps> = ({ title, children }) => {
 
   return (
     <Container dark={dark}>
-      <h2>{title}</h2>
+      {title && <h2>{title}</h2>}
       {children}
     </Container>
   );
