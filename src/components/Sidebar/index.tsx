@@ -5,16 +5,15 @@ import { useTheme } from '../../hooks/theme';
 
 interface SidebarProps {
   title: string;
-  description: string;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ title, description }) => {
+const Sidebar: React.FC<SidebarProps> = ({ title, children }) => {
   const { dark } = useTheme();
 
   return (
     <Container dark={dark}>
       <h2>{title}</h2>
-      <p>{description}</p>
+      {children}
     </Container>
   );
 };

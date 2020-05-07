@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { theme, ThemeProps } from '../../styles/themes';
 
 export const Container = styled.div`
-  padding: 10px;
+  margin: 0 10px;
 
   p {
     .post-date {
@@ -58,10 +58,6 @@ export const ImageContainer = styled.div`
       margin-bottom: 15px;
     }
   }
-
-  /* ${theme.screenSizes.lg} {
-    display: none;
-  } */
 `;
 
 export const InfoContainer = styled.div`
