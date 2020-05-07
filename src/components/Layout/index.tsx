@@ -19,26 +19,6 @@ const Layout: React.FC = ({ children }) => {
           <aside>
             <Sidebar title="Sobre mim">
               <Socials />
-              <EmojiInfo
-                emoji={{ text: '👨‍', ariaLabel: 'about-me' }}
-                text="Yuri Burk"
-              />
-              <EmojiInfo
-                emoji={{ text: '👨‍💻', ariaLabel: 'about-me' }}
-                text="Desenvolvedor"
-              />
-              <EmojiInfo
-                emoji={{ text: '💼', ariaLabel: 'about-work' }}
-                text="HBSIS"
-              />
-              <EmojiInfo
-                emoji={{ text: '🌆', ariaLabel: 'about-city' }}
-                text="Blumenau-SC"
-              />
-              <EmojiInfo
-                emoji={{ text: '👨‍🎓', ariaLabel: 'about-college' }}
-                text="Sistemas de Informação"
-              />
             </Sidebar>
             <Sidebar title="Sobre o blog">
               <p>

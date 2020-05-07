@@ -5,20 +5,17 @@ import { theme } from '../../styles/themes';
 
 export const Container = styled.div`
   display: flex;
+  justify-content: space-around;
+  padding: 15px;
+  margin: 10px 0;
+`;
+
+export const SocialIcon = styled.div`
+  text-align: center;
+  display: flex;
   justify-content: center;
-
-  margin: 25px 0;
-
-  svg {
-    color: ${theme.colors.blue};
-    transition: color 0.2s;
-
-    & + svg {
-      margin-left: 15px;
-    }
-
-    &:hover {
-      color: ${shade(0.5, theme.colors.blue)};
-    }
-  }
+  align-items: center;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: ${theme.colors.blue};
 `;
