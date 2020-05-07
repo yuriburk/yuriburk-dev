@@ -7,7 +7,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-around;
   padding: 15px;
-  margin: 10px 0;
+  margin-top: 15px;
 `;
 
 export const SocialIcon = styled.div`
@@ -18,4 +18,13 @@ export const SocialIcon = styled.div`
   padding: 10px;
   border-radius: 50%;
   background-color: ${theme.colors.blue};
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: ${shade(0.2, theme.colors.blue)};
+  }
+
+  svg {
+    color: ${theme.colors.primaryWhite};
+  }
 `;

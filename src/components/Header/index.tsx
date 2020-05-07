@@ -36,9 +36,6 @@ const Header: React.FC = () => {
                 <Link to="/">about</Link>
               </li>
               <li>
-                <Link to="/">tags</Link>
-              </li>
-              <li>
                 <Button dark={dark}>
                   <FaSearch />
                 </Button>
