@@ -1,6 +1,14 @@
-import { createGlobalStyle, css } from 'styled-components';
+import styled, { createGlobalStyle, css } from 'styled-components';
 
 import { ThemeProps } from '../../styles/themes';
+
+export const Container = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 0 auto;
+  margin-top: 4rem;
+`;
 
 export default createGlobalStyle(
   ({ dark, theme }: ThemeProps) => css`
@@ -53,7 +61,6 @@ export default createGlobalStyle(
     aside {
       flex: 0 0 29%;
       flex-direction: column;
-      padding: 10px 0;
 
       ${theme.screenSizes.xl} {
         display: none;
