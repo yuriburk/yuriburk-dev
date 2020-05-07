@@ -50,11 +50,7 @@ export const Title = styled.div`
   }
 `;
 
-interface NavigationProps {
-  searching?: boolean;
-}
-
-export const Navigation = styled.div<NavigationProps>`
+export const Navigation = styled.div`
   ul {
     display: flex;
 
@@ -83,29 +79,6 @@ export const Navigation = styled.div<NavigationProps>`
       }
     }
   }
-
-  input {
-    width: 0;
-    border: 0;
-    outline: 0;
-    background-color: ${theme.colors.primaryDark};
-    border-radius: 5px;
-    transition: width 0.5s, padding 0.2s;
-    color: ${theme.colors.blue};
-    padding: 0;
-
-    ${props =>
-      props.searching &&
-      css`
-        width: 100%;
-        padding: 0 5px;
-      `};
-  }
-`;
-
-export const Search = styled.div`
-  display: flex;
-  justify-content: flex-end;
 `;
 
 interface ButtonProps extends ThemeProps {
