@@ -18,6 +18,7 @@ interface PostProps {
         date: Date;
         description: string;
         image: string;
+        category: string;
       };
       fields: {
         slug: string;
@@ -71,6 +72,7 @@ export const pageQuery = graphql`
         tags
         description
         image
+        category
       }
       fields {
         slug

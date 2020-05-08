@@ -8,11 +8,22 @@ import Pagination from '../components/Pagination';
 
 interface AppProps {
   data: {
-    frontmatter: {
-      title: string;
-      tags: string[];
-      date: Date;
-      description: string;
+    allMarkdownRemark: {
+      edges: {
+        node: {
+          fields: {
+            slug: string;
+          };
+          frontmatter: {
+            title: string;
+            tags: string[];
+            date: Date;
+            description: string;
+            category: string;
+          };
+          timeToRead: number;
+        };
+      }[];
     };
   };
   pageContext: {
@@ -25,7 +36,14 @@ interface AppProps {
 
 const App: React.FC<AppProps> = ({ data, pageContext }) => {
   return (
-    <Layout>
+    <Layout
+      categories={data.allMarkdownRemark.edges
+        .filter(x => x.node.frontmatter.category)
+        .map(x => {
+          const { category } = x.node.frontmatter;
+          return category;
+        })}
+    >
       <SEO />
       <Posts data={data} />
       <Pagination
@@ -59,6 +77,7 @@ export const pageQuery = graphql`
             date(formatString: "DD/MM/YYYY")
             description
             image
+            category
           }
         }
       }

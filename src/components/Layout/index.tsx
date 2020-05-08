@@ -4,8 +4,8 @@ import Header from '../Header';
 import GlobalStyle, { Container } from './style';
 import Sidebar from '../Sidebar';
 import Socials from '../Socials';
-import Category from '../Category';
 import { useTheme } from '../../hooks/theme';
+import Categories from '../Categories';
 
 const Layout: React.FC = ({ children }) => {
   const { dark } = useTheme();
@@ -20,11 +20,8 @@ const Layout: React.FC = ({ children }) => {
             <Sidebar title="Minhas Redes">
               <Socials />
             </Sidebar>
-            <Sidebar title="Principais Assuntos">
-              <Category title="React.js" />
-              <Category title="React Native" />
-              <Category title="Gatsby" />
-              <Category title="C#" />
+            <Sidebar title="Categorias">
+              <Categories />
             </Sidebar>
           </aside>
         </Container>
@@ -33,4 +30,5 @@ const Layout: React.FC = ({ children }) => {
     </div>
   );
 };
+
 export default Layout;

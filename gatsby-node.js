@@ -42,6 +42,7 @@ exports.createPages = ({ graphql, actions }) => {
     const indexTemplate = path.resolve('src/templates/index.tsx');
     const postTemplate = path.resolve('src/templates/Post/index.tsx');
     const tagTemplate = path.resolve('src/templates/tag.tsx');
+    const categoryTemplate = path.resolve('src/templates/category.tsx');
     resolve(
       graphql(
         `
@@ -62,6 +63,7 @@ exports.createPages = ({ graphql, actions }) => {
                     title
                     image
                     tags
+                    category
                   }
                 }
               }
@@ -76,7 +78,6 @@ exports.createPages = ({ graphql, actions }) => {
 
         const items = result.data.allMarkdownRemark.edges;
 
-        /* Cria um lista de tags */
         const tagSet = new Set();
         items.forEach(edge => {
           const {
@@ -90,7 +91,6 @@ exports.createPages = ({ graphql, actions }) => {
           }
         });
 
-        /* Cria as páginas de tag */
         const tagList = Array.from(tagSet);
         tagList.forEach(tag => {
           createPage({
@@ -102,7 +102,6 @@ exports.createPages = ({ graphql, actions }) => {
           });
         });
 
-        /* Cria a página de posts */
         const posts = items.filter(item => item.node.fields.source === 'posts');
         posts.forEach(({ node }, index) => {
           const { slug, source } = node.fields;
@@ -125,6 +124,23 @@ exports.createPages = ({ graphql, actions }) => {
           pathPrefix: '/',
           component: indexTemplate,
         });
+
+        const categories = items
+          .filter(item => item.node.frontmatter.category)
+          .map(x => {
+            const { category } = x.node.frontmatter;
+            return category;
+          });
+
+        categories.forEach(category =>
+          createPage({
+            path: `/category/${_.kebabCase(category)}/`,
+            component: categoryTemplate,
+            context: {
+              category,
+            },
+          }),
+        );
       }),
     );
   });

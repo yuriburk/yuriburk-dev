@@ -6,6 +6,7 @@ description: YuriBurk.dev is a personal blog created with Gatsby using Typescrip
 tags:
   - Gatsby
   - React.js
+category: Gatsby
 ---
 
 <h1>🚀 YuriBurk.dev</h1>

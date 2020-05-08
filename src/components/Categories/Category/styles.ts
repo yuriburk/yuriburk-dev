@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { shade } from 'polished';
+import { Link } from 'gatsby';
 
-import { theme } from '../../styles/themes';
+import { theme } from '../../../styles/themes';
 
-export const Container = styled.a`
+export const Container = styled(Link)`
   display: flex;
   flex-direction: row;
   justify-content: center;

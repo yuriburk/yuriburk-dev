@@ -24,10 +24,6 @@ export const Items = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
-  ${theme.screenSizes.xl} {
-    padding-right: 0;
-  }
 `;
 
 export const Title = styled.div`
