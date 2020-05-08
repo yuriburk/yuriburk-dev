@@ -20,7 +20,7 @@ const Tag: React.FC<TagProps> = ({ data, pathContext, location }) => (
     <div>
       <SEO
         title={`Tag: ${pathContext.tag}`}
-        description={`Todos os posts marcados com a tag "${pathContext.tag}" no CodeStack Brasil`}
+        description={`Todos os posts marcados com a tag "${pathContext.tag}" no blog do Yuri Burk`}
         url={location.pathname}
       />
       <h2 style={{ fontSize: '22px', padding: '0px 15px' }}>
@@ -52,6 +52,7 @@ export const pageQuery = graphql`
             description
             image
           }
+          timeToRead
         }
       }
     }

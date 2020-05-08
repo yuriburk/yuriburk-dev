@@ -8,7 +8,7 @@ interface CategoryProps {
 }
 
 const Category: React.FC<CategoryProps> = ({ title }) => (
-  <Container href={`/tag/${kebabCase(title)}`}>{title}</Container>
+  <Container to={`/category/${kebabCase(title)}`}>{title}</Container>
 );
 
 export default Category;
