@@ -5,27 +5,10 @@ import Posts from '../components/Posts';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import Pagination from '../components/Pagination';
+import IAllMarkdownRemark from '../interfaces/IAllMarkdownRemark';
 
-interface AppProps {
-  data: {
-    allMarkdownRemark: {
-      edges: {
-        node: {
-          fields: {
-            slug: string;
-          };
-          frontmatter: {
-            title: string;
-            tags: string[];
-            date: Date;
-            description: string;
-            category: string;
-          };
-          timeToRead: number;
-        };
-      }[];
-    };
-  };
+interface IAppProps {
+  data: IAllMarkdownRemark;
   pageContext: {
     humanPageNumber: number;
     nextPagePath: string;
@@ -34,16 +17,9 @@ interface AppProps {
   };
 }
 
-const App: React.FC<AppProps> = ({ data, pageContext }) => {
+const App: React.FC<IAppProps> = ({ data, pageContext }) => {
   return (
-    <Layout
-      categories={data.allMarkdownRemark.edges
-        .filter(x => x.node.frontmatter.category)
-        .map(x => {
-          const { category } = x.node.frontmatter;
-          return category;
-        })}
-    >
+    <Layout>
       <SEO />
       <Posts data={data} />
       <Pagination

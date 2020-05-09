@@ -3,11 +3,11 @@ import React from 'react';
 import { Container } from './styles';
 import { useTheme } from '../../hooks/theme';
 
-interface SidebarProps {
+interface ISidebarProps {
   title?: string;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ title, children }) => {
+const Sidebar: React.FC<ISidebarProps> = ({ title, children }) => {
   const { dark } = useTheme();
 
   return (
