@@ -14,12 +14,11 @@ const SocialIcon: React.FC<SocialIconProps> = ({
   icon: Icon,
   size = 35,
   url,
-  color,
 }) => {
   const handleClick = useCallback(() => window.open(url), [url]);
 
   return (
-    <Container color={color} onClick={handleClick}>
+    <Container onClick={handleClick}>
       <Icon size={size} />
     </Container>
   );

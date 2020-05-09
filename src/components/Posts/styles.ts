@@ -3,8 +3,6 @@ import styled, { css } from 'styled-components';
 import { theme, ThemeProps } from '../../styles/themes';
 
 export const Container = styled.div`
-  margin: 0 10px;
-
   p {
     .post-date {
       margin-bottom: 5px;

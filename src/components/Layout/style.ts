@@ -52,6 +52,7 @@ export default createGlobalStyle(
 
     main {
       flex: 0 0 71%;
+      padding: 0 8px;
 
       ${theme.screenSizes.xl} {
         flex: 1 1 100%;
@@ -60,6 +61,7 @@ export default createGlobalStyle(
 
     aside {
       flex: 0 0 29%;
+      padding: 0 8px;
       flex-direction: column;
 
       ${theme.screenSizes.xl} {

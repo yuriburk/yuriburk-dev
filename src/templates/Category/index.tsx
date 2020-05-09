@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Posts from '../components/Posts';
-import Layout from '../components/Layout';
-import SEO from '../components/SEO';
+import Posts from '../../components/Posts';
+import Layout from '../../components/Layout';
+import SEO from '../../components/SEO';
 
 interface CategoryProps {
   data: any;
