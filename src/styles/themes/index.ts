@@ -1,5 +1,5 @@
 import colors from './colors';
-import screenSizes from './screen-sizes';
+import screenSizes from './screenSizes';
 
 export const theme = {
   colors,
