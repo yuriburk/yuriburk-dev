@@ -2,15 +2,20 @@ import styled, { css } from 'styled-components';
 
 import { IThemeProps } from '../../styles/themes';
 
-export const Container = styled.div(
+export const Container = styled.footer(
   ({ dark, theme }: IThemeProps) => css`
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    margin-top: 50px;
     background-color: ${dark
       ? theme.colors.secundaryDark
       : theme.colors.secundaryWhite};
-    padding: 1.8rem;
-    border-radius: 0.5rem;
-    margin: 0 10px;
+
+    span {
+      display: flex;
+      margin: 0 2.5px;
+    }
   `,
 );

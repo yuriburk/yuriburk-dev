@@ -2,6 +2,7 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
 import Category from './Category';
+import IAllMarkdownRemark from '../../interfaces/IAllMarkdownRemark';
 
 const Categories: React.FC = () => {
   return (
@@ -19,15 +20,23 @@ const Categories: React.FC = () => {
           }
         }
       `}
-      render={(query: object) => {
-        return (
-          <div>
-            {query.allMarkdownRemark.edges
+      render={(query: IAllMarkdownRemark) => {
+        const categories = Array.from(
+          new Set(
+            query.allMarkdownRemark.edges
               ?.filter(edge => edge.node.frontmatter.category)
               .map(edge => {
                 const { category } = edge.node.frontmatter;
-                return <Category key={category} title={category} />;
-              })}
+                return category;
+              }),
+          ),
+        );
+
+        return (
+          <div>
+            {categories?.map(category => (
+              <Category key={category} title={category} />
+            ))}
           </div>
         );
       }}

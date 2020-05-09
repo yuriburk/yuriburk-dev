@@ -3,14 +3,14 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 import { Container, Page } from './styles';
 
-interface PaginationProps {
+interface IPaginationProps {
   currentPage: number;
   nextPagePath: string;
   previousPagePath: string;
   pages: number;
 }
 
-const Pagination: React.FC<PaginationProps> = ({
+const Pagination: React.FC<IPaginationProps> = ({
   currentPage,
   nextPagePath,
   previousPagePath,

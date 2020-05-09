@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
 
-import { theme, ThemeProps } from '../../styles/themes';
+import { theme, IThemeProps } from '../../styles/themes';
 
 export const Container = styled.div(
-  ({ dark }: ThemeProps) => css`
+  ({ dark }: IThemeProps) => css`
     display: flex;
     flex-direction: column;
     text-align: center;

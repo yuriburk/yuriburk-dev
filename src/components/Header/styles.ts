@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components';
 import { shade } from 'polished';
 
-import { theme, ThemeProps } from '../../styles/themes';
+import { theme, IThemeProps } from '../../styles/themes';
 
 export const Container = styled.header(
-  ({ dark }: ThemeProps) => css`
+  ({ dark }: IThemeProps) => css`
     padding: 1rem 1.5rem 1rem 1.5rem;
     background-color: ${dark
       ? theme.colors.secundaryDark
@@ -77,7 +77,7 @@ export const Navigation = styled.div`
   }
 `;
 
-interface ButtonProps extends ThemeProps {
+interface ButtonProps extends IThemeProps {
   hoverColor?: string;
   animate?: boolean;
 }

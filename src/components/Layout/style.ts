@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle, css } from 'styled-components';
 
-import { ThemeProps } from '../../styles/themes';
+import { IThemeProps } from '../../styles/themes';
 
 export const Container = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ export const Container = styled.div`
 `;
 
 export default createGlobalStyle(
-  ({ dark, theme }: ThemeProps) => css`
+  ({ dark, theme }: IThemeProps) => css`
     header,
     body {
       -webkit-font-smoothing: antialiased;
@@ -28,7 +28,8 @@ export default createGlobalStyle(
     }
 
     html,
-    body {
+    body,
+    content {
       height: 100%;
     }
 
@@ -51,8 +52,9 @@ export default createGlobalStyle(
     }
 
     main {
-      flex: 0 0 71%;
+      flex: 1 1 71%;
       padding: 0 8px;
+      min-height: 90vh;
 
       ${theme.screenSizes.xl} {
         flex: 1 1 100%;

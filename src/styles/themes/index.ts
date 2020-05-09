@@ -8,7 +8,7 @@ export const theme = {
 
 type Theme = typeof theme;
 
-export interface ThemeProps {
+export interface IThemeProps {
   dark: boolean;
   theme: Theme;
 }

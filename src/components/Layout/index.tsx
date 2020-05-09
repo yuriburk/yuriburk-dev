@@ -1,11 +1,12 @@
 import React from 'react';
 
 import Header from '../Header';
-import GlobalStyle, { Container } from './style';
 import Sidebar from '../Sidebar';
 import Socials from '../Socials';
-import { useTheme } from '../../hooks/theme';
 import Categories from '../Categories';
+import Footer from '../Footer';
+import { useTheme } from '../../hooks/theme';
+import GlobalStyle, { Container } from './style';
 
 const Layout: React.FC = ({ children }) => {
   const { dark } = useTheme();
@@ -26,6 +27,7 @@ const Layout: React.FC = ({ children }) => {
           </aside>
         </Container>
       </div>
+      <Footer />
       <GlobalStyle dark={dark} />
     </div>
   );
