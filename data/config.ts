@@ -4,7 +4,7 @@ const config = {
   siteTitleShort: 'Yuri Burk',
   siteRss: '/rss.xml',
   siteImage: '',
-  googleAnalyticsID: process.env.ANALYTICS_ID,
+  googleAnalyticsID: process.env.GATSBY_GOOGLE_ANALYTICS_ID,
   themeColor: '#000000',
   backgroundColor: '#1a1a1a',
   siteUrl: 'https://yuriburkdev.web.app/',

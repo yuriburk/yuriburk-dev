@@ -9,6 +9,7 @@ const Footer: React.FC = () => {
 
   return (
     <Container dark={dark}>
+      <p>{process.env.GATSBY_GOOGLE_ANALYTICS_ID}</p>
       <span role="img" aria-label="Made with love by Yuri Burk">
         Made with 💓 by Yuri Burk
       </span>
