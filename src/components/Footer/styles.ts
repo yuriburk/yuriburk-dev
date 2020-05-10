@@ -16,6 +16,10 @@ export const Container = styled.footer(
     span {
       display: flex;
       margin: 0 2.5px;
+
+      ${theme.screenSizes.lg} {
+        font-size: 15px;
+      }
     }
   `,
 );
