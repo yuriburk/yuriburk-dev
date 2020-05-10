@@ -3,22 +3,29 @@ import { IconType } from 'react-icons/lib/cjs';
 
 import { Container } from './styles';
 
-interface SocialIconProps {
+interface ISocialIconProps {
   icon: IconType;
-  size?: number;
   url: string;
+  size?: number;
   color?: string;
 }
 
-const SocialIcon: React.FC<SocialIconProps> = ({
+const SocialIcon: React.FC<ISocialIconProps> = ({
   icon: Icon,
   size = 35,
   url,
+  color,
 }) => {
-  const handleClick = useCallback(() => window.open(url), [url]);
+  const handleClick = useCallback(() => {
+    const newWindow = window.open(url);
+
+    if (newWindow) {
+      newWindow.opener = null;
+    }
+  }, [url]);
 
   return (
-    <Container onClick={handleClick}>
+    <Container color={color} onClick={handleClick}>
       <Icon size={size} />
     </Container>
   );

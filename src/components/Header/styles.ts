@@ -27,7 +27,7 @@ export const Items = styled.div`
 `;
 
 export const Title = styled.div`
-  transition: transform 0.1s cubic-bezier(0, 1.8, 1, 1.8);
+  transition: transform 0.2s cubic-bezier(0, 1.8, 1, 1.8);
 
   &:hover {
     transform: scale(1.1);

@@ -3,32 +3,17 @@ import { graphql } from 'gatsby';
 
 import Layout from '../../components/Layout';
 import SEO from '../../components/SEO';
-import { Container } from './styles';
-import { useTheme } from '../../hooks/theme';
 import PostInfo from '../../components/PostInfo';
 import Content from '../../components/Content';
+import IMarkdownRemark from '../../interfaces/IMarkdownRemark';
+import { useTheme } from '../../hooks/theme';
+import { Container } from './styles';
 
-interface PostProps {
-  data: {
-    markdownRemark: {
-      html: string;
-      frontmatter: {
-        title: string;
-        tags: string[];
-        date: Date;
-        description: string;
-        image: string;
-        category: string;
-      };
-      fields: {
-        slug: string;
-      };
-      timeToRead: number;
-    };
-  };
+interface IPostProps {
+  data: IMarkdownRemark;
 }
 
-const Post: React.FC<PostProps> = ({ data }) => {
+const Post: React.FC<IPostProps> = ({ data }) => {
   const { dark } = useTheme();
   const { markdownRemark } = data;
   const { html, frontmatter, timeToRead } = markdownRemark;

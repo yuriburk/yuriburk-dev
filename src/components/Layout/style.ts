@@ -2,10 +2,11 @@ import styled, { createGlobalStyle, css } from 'styled-components';
 
 import { IThemeProps } from '../../styles/themes';
 
-export const Container = styled.div`
+export const Content = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  max-width: 1180px;
   margin: 0 auto;
   margin-top: 4rem;
 `;
@@ -25,6 +26,7 @@ export default createGlobalStyle(
       background-color: ${dark
         ? theme.colors.primaryDark
         : theme.colors.primaryWhite};
+      overflow-x: hidden;
     }
 
     html,
@@ -54,7 +56,8 @@ export default createGlobalStyle(
     main {
       flex: 1 1 71%;
       padding: 0 8px;
-      min-height: 90vh;
+      min-height: 100vh;
+      height: max-content;
 
       ${theme.screenSizes.xl} {
         flex: 1 1 100%;
@@ -76,11 +79,6 @@ export default createGlobalStyle(
       background: transparent;
       border: 0;
       outline: 0;
-    }
-
-    .content {
-      max-width: 1180px;
-      margin: 0 auto;
     }
 
     ::-webkit-scrollbar {

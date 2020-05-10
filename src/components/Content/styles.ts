@@ -13,6 +13,10 @@ export const Container = styled.div`
 
   h1 {
     font-size: 35px;
+
+    ${theme.screenSizes.lg} {
+      font-size: 28px;
+    }
   }
 
   ul {
@@ -41,6 +45,10 @@ export const Container = styled.div`
   h4,
   h5 {
     font-size: 28px;
+
+    ${theme.screenSizes.lg} {
+      font-size: 25px;
+    }
   }
 
   p {

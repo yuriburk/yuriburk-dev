@@ -36,7 +36,7 @@ const Header: React.FC = () => {
                 <Link to="/">tags</Link>
               </li>
               <li>
-                <Link to="/">about</Link>
+                <Link to="/about">about</Link>
               </li>
               <li>
                 <Button dark>

@@ -1,23 +1,30 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { shade } from 'polished';
 
 import { theme } from '../../../styles/themes';
 
-export const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  border-radius: 50%;
-  background-color: ${theme.colors.blue};
-  transition: background-color 0.2s;
-  cursor: pointer;
+interface IContainerProps {
+  color?: string;
+}
 
-  &:hover {
-    background-color: ${shade(0.5, theme.colors.blue)};
-  }
+export const Container = styled.div<IContainerProps>(
+  ({ color }) => css`
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: ${color ?? theme.colors.blue};
+    margin: 0 5px;
+    transition: transform 0.2s cubic-bezier(0, 1.8, 1, 1.8);
 
-  svg {
-    color: ${theme.colors.primaryWhite};
-  }
-`;
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    svg {
+      color: ${theme.colors.primaryWhite};
+    }
+  `,
+);

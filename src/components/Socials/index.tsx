@@ -10,27 +10,31 @@ import SocialIcon from './SocialIcon';
 
 import { Container } from './styles';
 
-const Socials: React.FC = () => (
+interface ISocialsProps {
+  color?: string;
+}
+
+const Socials: React.FC<ISocialsProps> = ({ color }) => (
   <Container>
     <SocialIcon
       icon={FaGithubAlt}
       url="https://github.com/yuriburk"
-      color="#3e82c5"
+      color={color}
     />
     <SocialIcon
       icon={FaLinkedinIn}
       url="https://www.linkedin.com/in/jefferson-yuri-cunha-burk/"
-      color="#007fb1"
+      color={color}
     />
     <SocialIcon
       icon={FaInstagram}
       url="https://instagram.com/yuriburk"
-      color="#3d719d"
+      color={color}
     />
     <SocialIcon
       icon={FaGooglePlay}
       url="https://play.google.com/store/apps/dev?id=6777288266167396492"
-      color="#38bbc2"
+      color={color}
     />
   </Container>
 );

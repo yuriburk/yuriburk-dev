@@ -10,6 +10,7 @@ export default interface IAllMarkdownRemark {
           tags: string[];
           date: Date;
           description: string;
+          image: string;
           category: string;
         };
         timeToRead: number;

@@ -12,11 +12,11 @@ import {
 import { useTheme } from '../../hooks/theme';
 import PostInfo from '../PostInfo';
 
-interface PostsProps {
+interface IPostsProps {
   data: any;
 }
 
-const Posts: React.FC<PostsProps> = ({ data }) => {
+const Posts: React.FC<IPostsProps> = ({ data }) => {
   const { edges } = data.allMarkdownRemark;
   const { dark } = useTheme();
 

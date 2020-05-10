@@ -15,6 +15,7 @@ export const Container = styled.div`
     margin-bottom: 10px;
 
     ${theme.screenSizes.lg} {
+      font-size: 28px;
       text-align: center;
     }
   }
@@ -69,12 +70,12 @@ export const TagContainer = styled.div`
   }
 `;
 
-interface TagProps {
+interface ITagProps {
   clickable?: boolean;
 }
 
 export const Tag = styled.a(
-  ({ clickable }: TagProps) => css`
+  ({ clickable }: ITagProps) => css`
     padding: 5px 5px;
     border-radius: 5px;
     margin: 10px 10px 10px 0;

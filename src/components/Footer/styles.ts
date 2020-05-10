@@ -7,19 +7,17 @@ export const Container = styled.footer(
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15px;
-    margin-top: 50px;
+    align-self: flex-end;
+    padding: 5px;
     background-color: ${dark
       ? theme.colors.secundaryDark
       : theme.colors.secundaryWhite};
+    font-size: 15px;
+    margin-top: 15px;
 
     span {
       display: flex;
       margin: 0 2.5px;
-
-      ${theme.screenSizes.lg} {
-        font-size: 15px;
-      }
     }
   `,
 );
