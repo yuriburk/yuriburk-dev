@@ -19,7 +19,7 @@ export const ThemeContext = createContext<ThemeContextData>(
 );
 
 export const ThemeProvider: React.FC = ({ children }) => {
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useState(false);
 
   useEffect(() => {
     const darkTheme = localStorage.getItem('@YuriBurk.dev:darkTheme');
