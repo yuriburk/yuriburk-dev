@@ -1,12 +1,11 @@
 ---
 date: 2020-05-05T01:07:50.617Z
-title: Desenvolvimento do meu blog com Gatsby
+title: Burk.dev
 image: /img/posts/icon.png
 description: YuriBurk.dev is a personal blog created with Gatsby using Typescript
 tags:
   - Gatsby
   - React.js
-category: Gatsby
 ---
 
 <h1>🚀 YuriBurk.dev</h1>

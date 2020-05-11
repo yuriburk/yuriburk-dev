@@ -9,13 +9,13 @@ import { ThemeProvider as StyledProvider } from 'styled-components';
 
 import { theme } from '../styles/themes';
 
-interface ThemeContextData {
+interface IThemeContextData {
   dark: boolean;
   toggleTheme(): void;
 }
 
-export const ThemeContext = createContext<ThemeContextData>(
-  {} as ThemeContextData,
+export const ThemeContext = createContext<IThemeContextData>(
+  {} as IThemeContextData,
 );
 
 export const ThemeProvider: React.FC = ({ children }) => {
@@ -41,7 +41,7 @@ export const ThemeProvider: React.FC = ({ children }) => {
   );
 };
 
-export function useTheme(): ThemeContextData {
+export function useTheme(): IThemeContextData {
   const context = useContext(ThemeContext);
 
   if (!context) {

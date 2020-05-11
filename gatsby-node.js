@@ -42,7 +42,6 @@ exports.createPages = ({ graphql, actions }) => {
     const indexTemplate = path.resolve('src/templates/index.tsx');
     const postTemplate = path.resolve('src/templates/Post/index.tsx');
     const tagTemplate = path.resolve('src/templates/Tag/index.tsx');
-    const categoryTemplate = path.resolve('src/templates/Category/index.tsx');
     resolve(
       graphql(
         `
@@ -63,7 +62,6 @@ exports.createPages = ({ graphql, actions }) => {
                     title
                     image
                     tags
-                    category
                   }
                 }
               }
@@ -124,23 +122,6 @@ exports.createPages = ({ graphql, actions }) => {
           pathPrefix: '/',
           component: indexTemplate,
         });
-
-        const categories = items
-          .filter(item => item.node.frontmatter.category)
-          .map(x => {
-            const { category } = x.node.frontmatter;
-            return category;
-          });
-
-        [...new Set(categories)].forEach(category =>
-          createPage({
-            path: `/category/${_.kebabCase(category)}/`,
-            component: categoryTemplate,
-            context: {
-              category,
-            },
-          }),
-        );
       }),
     );
   });

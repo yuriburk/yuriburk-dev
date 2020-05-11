@@ -28,8 +28,8 @@ const About: React.FC = () => (
       <Content>
         <h2>Sobre mim</h2>
         <p>
-          Meu nome é Jefferson Yuri Cunha Burk, moro em Blumenau/SC onde
-          trabalho na{' '}
+          Meu nome é Jefferson Yuri Cunha Burk, formado em Sistemas de
+          Informação, moro em Blumenau/SC onde trabalho na{' '}
           <a
             target="_blank"
             rel="noopener noreferrer"
@@ -37,8 +37,7 @@ const About: React.FC = () => (
           >
             HBSIS
           </a>{' '}
-          como analista de desenvolvimento full-stack, formado em Sistemas de
-          Informação.
+          como analista de desenvolvimento full-stack.
         </p>
         <br />
         <p>

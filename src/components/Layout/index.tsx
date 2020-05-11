@@ -2,7 +2,7 @@ import React from 'react';
 
 import Header from '../Header';
 import Sidebar from '../Sidebar';
-import Categories from '../Categories';
+import Tags from '../Tags';
 import Footer from '../Footer';
 import { useTheme } from '../../hooks/theme';
 import GlobalStyle, { Content } from './style';
@@ -21,8 +21,8 @@ const Layout: React.FC<ILayoutProps> = ({ showSidebar = true, children }) => {
         <main role="main">{children}</main>
         {showSidebar && (
           <aside>
-            <Sidebar title="Categorias">
-              <Categories />
+            <Sidebar title="Tags">
+              <Tags />
             </Sidebar>
           </aside>
         )}

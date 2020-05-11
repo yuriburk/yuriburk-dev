@@ -1,10 +1,10 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
-import Category from './Category';
+import Tag from './Tag';
 import IAllMarkdownRemark from '../../interfaces/IAllMarkdownRemark';
 
-const Categories: React.FC = () => {
+const Tags: React.FC = () => {
   return (
     <StaticQuery
       query={graphql`
@@ -13,7 +13,7 @@ const Categories: React.FC = () => {
             edges {
               node {
                 frontmatter {
-                  category
+                  tags
                 }
               }
             }
@@ -21,21 +21,21 @@ const Categories: React.FC = () => {
         }
       `}
       render={(query: IAllMarkdownRemark) => {
-        const categories = Array.from(
-          new Set(
-            query.allMarkdownRemark.edges
-              ?.filter(edge => edge.node.frontmatter.category)
-              .map(edge => {
-                const { category } = edge.node.frontmatter;
-                return category;
-              }),
-          ),
-        );
+        const tagsList = [] as string[];
+        query.allMarkdownRemark.edges
+          ?.filter(edge => edge.node.frontmatter.tags)
+          .forEach(edge => {
+            edge.node.frontmatter.tags.forEach(tag => {
+              if (!tagsList.includes(tag)) {
+                tagsList.push(tag);
+              }
+            });
+          });
 
         return (
           <div>
-            {categories?.map(category => (
-              <Category key={category} title={category} />
+            {tagsList?.map(tag => (
+              <Tag key={tag} title={tag} />
             ))}
           </div>
         );
@@ -44,4 +44,4 @@ const Categories: React.FC = () => {
   );
 };
 
-export default Categories;
+export default Tags;

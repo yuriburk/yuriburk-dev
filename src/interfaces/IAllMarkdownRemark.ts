@@ -11,7 +11,6 @@ export default interface IAllMarkdownRemark {
           date: Date;
           description: string;
           image: string;
-          category: string;
         };
         timeToRead: number;
       };

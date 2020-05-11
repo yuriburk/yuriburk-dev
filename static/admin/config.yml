@@ -16,5 +16,4 @@ collections:
       - { name: image, label: Image, widget: image }
       - { name: description, label: Description }
       - { name: tags, widget: list }
-      - { name: category, widget: string }
       - { name: body, label: Body, widget: markdown }

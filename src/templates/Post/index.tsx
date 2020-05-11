@@ -57,7 +57,6 @@ export const pageQuery = graphql`
         tags
         description
         image
-        category
       }
       fields {
         slug

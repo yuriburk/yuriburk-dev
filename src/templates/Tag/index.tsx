@@ -4,9 +4,10 @@ import { graphql } from 'gatsby';
 import Posts from '../../components/Posts';
 import Layout from '../../components/Layout';
 import SEO from '../../components/SEO';
+import IAllMarkdownRemark from '../../interfaces/IAllMarkdownRemark';
 
-interface TagProps {
-  data: any;
+interface ITagProps {
+  data: IAllMarkdownRemark;
   pathContext: {
     tag: any;
   };
@@ -15,7 +16,7 @@ interface TagProps {
   };
 }
 
-const Tag: React.FC<TagProps> = ({ data, pathContext, location }) => (
+const Tag: React.FC<ITagProps> = ({ data, pathContext, location }) => (
   <Layout>
     <div>
       <SEO

@@ -62,7 +62,7 @@ export const Wallpaper = styled.div`
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 1180px;
+  max-width: 1050px;
   padding: 15px;
 
   a {
@@ -79,7 +79,7 @@ export const SocialsContainer = styled.div`
 export const Project = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   ${theme.screenSizes.xl} {
     flex-direction: column;
@@ -93,12 +93,11 @@ export const Project = styled.div`
   div {
     flex: 1;
     width: 0;
+    margin-bottom: 50px;
 
     ${theme.screenSizes.xl} {
       width: 100%;
     }
-
-    margin-left: 15px;
 
     img {
       border-radius: 5px;
@@ -112,13 +111,13 @@ export const Project = styled.div`
         }
       }
     }
+
+    & + div {
+      margin-left: 15px;
+    }
   }
 
   p + p {
     margin-top: 15px;
-  }
-
-  & + div {
-    margin-top: 50px;
   }
 `;
