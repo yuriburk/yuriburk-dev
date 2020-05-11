@@ -47,7 +47,7 @@ const About: React.FC = () => (
         </p>
         <br />
         <p>
-          Meu hobby é aprender novas tecnologias e aplicar elas em prática, por
+          Meu hobby é aprender novas tecnologias e colocá-las em prática, por
           tal motivo desenvolvi este blog como forma de estudo utilizando
           Gatsby, onde irei compartilhar um pouco do que estou estudando.
         </p>
