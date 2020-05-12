@@ -36,7 +36,7 @@ const SEO: React.FC<ISEOProps> = ({
         <meta name="description" content={seo.description} />
         <meta
           name="google-site-verification"
-          content="AErtymr6aC5YJCy0yyToLTI76YHJ2xiLYbu318HL2GY"
+          content={process.env.GATSBY_GOOGLE_SITE_VERIFICATION}
         />
         <meta name="image" content={seo.image} />
         {seo.url && <meta property="og:url" content={seo.url} />}
