@@ -37,6 +37,7 @@
     "lodash": "^4.17.15",
     "minireset.css": "^0.0.6",
     "netlify-cms-app": "^2.12.11",
+    "netlify-plugin-gatsby-cache": "^0.2.1",
     "polished": "^3.5.2",
     "prismjs": "^1.20.0",
     "react": "^16.13.1",

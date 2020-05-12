@@ -17,6 +17,7 @@ export default {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-polished',
     'gatsby-plugin-netlify-cms',
+    'netlify-plugin-gatsby-cache',
     {
       resolve: 'gatsby-plugin-prefetch-google-fonts',
       options: {
