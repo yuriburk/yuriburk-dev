@@ -95,6 +95,14 @@ const About: React.FC = () => (
                 href="https://github.com/yuriburk/math-hero"
               >
                 Github
+              </a>{' '}
+              e pode ser jogado{' '}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="http://math-hero.ronn.in/"
+              >
+                aqui
               </a>
               .
             </p>
