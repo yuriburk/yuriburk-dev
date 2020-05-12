@@ -42,8 +42,8 @@ const About: React.FC = () => (
         <br />
         <p>
           Minha principal área de conhecimento é desenvolvimento back-end
-          utilizando C#, também estou me esforçando bastante para me tornar
-          especialista em mobile/front-end, utilizando React.
+          utilizando C#, mas desde o último ano comecei a estudar bastante para
+          me tornar especialista em mobile e front-end, utilizando React.
         </p>
         <br />
         <p>
@@ -83,9 +83,9 @@ const About: React.FC = () => (
           <div>
             <h4>Math Hero</h4>
             <p>
-              Math Hero é um protótipo de jogo educacional, desenvolvido para o
-              meu TCC utilizando C# com a ferramenta Unity 3D, servindo como
-              apoio ao ensino das operações básicas de matemática.
+              Math Hero é um protótipo de jogo educacional, foi desenvolvido
+              para o meu TCC utilizando C# com a ferramenta Unity 3D, servindo
+              como apoio ao ensino das operações básicas de matemática.
             </p>
             <p>
               O código fonte está disponível no meu{' '}

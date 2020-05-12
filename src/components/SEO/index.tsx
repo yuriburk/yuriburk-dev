@@ -5,7 +5,7 @@ import config from '../../../data/config';
 import SchemaOrg from './SchemaOrg';
 import favicon from '../../../static/favicon.png';
 
-interface SEOProps {
+interface ISEOProps {
   title?: string;
   description?: string;
   url?: string;
@@ -13,7 +13,7 @@ interface SEOProps {
   datePublished?: Date;
 }
 
-const SEO: React.FC<SEOProps> = ({
+const SEO: React.FC<ISEOProps> = ({
   title,
   description,
   url,
@@ -36,7 +36,7 @@ const SEO: React.FC<SEOProps> = ({
         <meta name="description" content={seo.description} />
         <meta
           name="google-site-verification"
-          content="1NZyEp6rzmtcGb5--X8tHKHI0zDzbQ1vmaCGp2ckZdc"
+          content="AErtymr6aC5YJCy0yyToLTI76YHJ2xiLYbu318HL2GY"
         />
         <meta name="image" content={seo.image} />
         {seo.url && <meta property="og:url" content={seo.url} />}

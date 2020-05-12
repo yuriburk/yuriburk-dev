@@ -2,5 +2,7 @@ User-agent: *
 
 Allow: /
 Disallow: /404
+Disallow: /404.html
+Disallow: /admin/
 
 sitemap: https://yuriburk.netlify.app/sitemap.xml
