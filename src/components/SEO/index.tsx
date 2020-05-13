@@ -66,7 +66,7 @@ const SEO: React.FC<ISEOProps> = ({
         description={description}
         image={config.siteDescription}
         organization={{
-          logo: config.siteImage,
+          logo: config.siteLogo,
           name: config.siteTitle,
           url: seo.url,
         }}
