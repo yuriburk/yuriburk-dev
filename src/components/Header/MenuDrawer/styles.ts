@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 interface IContainerProps {
   open: boolean;
@@ -17,10 +17,6 @@ export const Container = styled.div<IContainerProps>`
   transition: transform 0.3s ease-out;
   transform: ${props => (props.open ? 'translateX(0)' : 'translateX(100%)')};
 
-  .dark & {
-    background-color: #393e46;
-  }
-
   ul {
     display: flex;
     flex-direction: column;
@@ -36,7 +32,7 @@ export const Container = styled.div<IContainerProps>`
 
       a {
         display: flex;
-        font-size: 2rem;
+        font-size: 2.5rem;
       }
     }
   }

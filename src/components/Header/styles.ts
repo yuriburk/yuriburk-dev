@@ -67,11 +67,11 @@ export const Navigation = styled.div`
       }
 
       ${theme.screenSizes.lg} {
-        a {
+        .hide-small {
           display: none;
         }
 
-        margin: 0px 0.5rem;
+        margin: 0px 0.25rem;
       }
     }
   }

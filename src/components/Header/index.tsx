@@ -31,10 +31,14 @@ const Header: React.FC = () => {
           <nav>
             <ul>
               <li>
-                <Link to="/">home</Link>
+                <Link className="hide-small" to="/">
+                  home
+                </Link>
               </li>
               <li>
-                <Link to="/about">about</Link>
+                <Link className="hide-small" to="/about">
+                  about
+                </Link>
               </li>
               <li>
                 <Button dark>
