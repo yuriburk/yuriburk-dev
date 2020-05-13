@@ -56,14 +56,6 @@ export const Navigation = styled.div`
       align-items: center;
       margin: 0px 1rem;
 
-      ${theme.screenSizes.lg} {
-        &:nth-child(1),
-        &:nth-child(2),
-        &:nth-child(3) {
-          display: none;
-        }
-      }
-
       a {
         color: ${theme.colors.blue};
         text-decoration: none;
@@ -73,17 +65,33 @@ export const Navigation = styled.div`
           color: ${shade(0.5, theme.colors.blue)};
         }
       }
+
+      ${theme.screenSizes.lg} {
+        a {
+          display: none;
+        }
+
+        margin: 0px 0.5rem;
+      }
+    }
+  }
+
+  .menu-toggle {
+    display: none;
+
+    ${theme.screenSizes.lg} {
+      display: flex;
     }
   }
 `;
 
-interface ButtonProps extends IThemeProps {
+interface IButtonProps extends IThemeProps {
   hoverColor?: string;
   animate?: boolean;
 }
 
 export const Button = styled.button(
-  ({ hoverColor, animate }: ButtonProps) => css`
+  ({ hoverColor, animate }: IButtonProps) => css`
     color: ${theme.colors.blue};
     transition: color 0.2s;
 
@@ -112,6 +120,7 @@ export const Button = styled.button(
     }
 
     svg {
+      display: flex;
       width: 24px;
       height: 24px;
 
