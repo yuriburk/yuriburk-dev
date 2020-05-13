@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import MenuDrawer from '../MenuDrawer';
+import MenuDrawer from '../Drawer';
 import { Container } from './styles';
 
 const MenuToggle: React.FC = () => {
@@ -8,7 +8,6 @@ const MenuToggle: React.FC = () => {
 
   return (
     <>
-      <MenuDrawer isMenuOpened={isOpened} />
       <Container
         role="button"
         onClick={() => setIsOpened(!isOpened)}
@@ -16,6 +15,7 @@ const MenuToggle: React.FC = () => {
       >
         <span />
       </Container>
+      <MenuDrawer isMenuOpened={isOpened} />
     </>
   );
 };

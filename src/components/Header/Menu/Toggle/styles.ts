@@ -45,7 +45,6 @@ export const Container = styled.div<IContainerProps>`
   ${props =>
     props.isOpened &&
     css`
-      overflow: hidden;
       span {
         transform: rotate(45deg);
 

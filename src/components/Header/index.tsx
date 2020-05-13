@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { Link } from 'gatsby';
 import { FaSearch, FaSun, FaMoon } from 'react-icons/fa';
 
-import MenuToggle from './MenuToggle';
+import MenuToggle from './Menu/Toggle';
 import { useTheme } from '../../hooks/theme';
 import { Container, Items, Title, Navigation, Button } from './styles';
 
