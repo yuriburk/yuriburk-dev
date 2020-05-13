@@ -1,6 +1,7 @@
 const config = {
   siteTitle: 'Yuri Burk',
-  siteDescription: 'O melhor blog de programação do Brasil :)',
+  siteDescription:
+    'Meu blog pessoal para falar sobre React, Node, C# e muito mais',
   siteTitleShort: 'Yuri Burk',
   siteRss: '/rss.xml',
   siteImage: '',
