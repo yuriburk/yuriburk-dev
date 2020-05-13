@@ -8,7 +8,7 @@ const config = {
   googleAnalyticsID: process.env.GATSBY_GOOGLE_ANALYTICS_ID,
   themeColor: '#000000',
   backgroundColor: '#1a1a1a',
-  siteUrl: 'https://yuriburk.netlify.app/',
+  siteUrl: 'https://burk.dev/',
 };
 
 export default config;
