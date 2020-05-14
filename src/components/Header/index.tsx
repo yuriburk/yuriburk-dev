@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { Link } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 import { FaSearch, FaSun, FaMoon } from 'react-icons/fa';
 
-import Search from '../Search';
 import MenuToggle from './Menu/Toggle';
 import { useTheme } from '../../hooks/theme';
 import { Container, Items, Title, Navigation, Button } from './styles';
@@ -10,7 +9,6 @@ import { Container, Items, Title, Navigation, Button } from './styles';
 const Header: React.FC = () => {
   const { dark, toggleTheme } = useTheme();
   const [firstLoad, setFirstLoad] = useState(false);
-  const [searching, setSearching] = useState(false);
 
   const checkFirstPageLoad = useCallback(() => {
     const firstPageLoad = localStorage.getItem('@YuriBurk.dev:firstLoad');
@@ -23,53 +21,48 @@ const Header: React.FC = () => {
 
   useEffect(() => checkFirstPageLoad(), [checkFirstPageLoad]);
 
-  const handleSearch = (): void => setSearching(!searching);
-
   return (
-    <>
-      <Container dark={dark}>
-        <Items>
-          <Title>
-            <Link to="/">{'<YuriBurk />'}</Link>
-          </Title>
-          <Navigation>
-            <nav>
-              <ul>
-                <li>
-                  <Link className="hide-small" to="/">
-                    home
-                  </Link>
-                </li>
-                <li>
-                  <Link className="hide-small" to="/about">
-                    about
-                  </Link>
-                </li>
-                <li>
-                  <Button dark>
-                    <FaSearch onClick={handleSearch} />
-                  </Button>
-                </li>
-                <li>
-                  <Button
-                    dark={dark}
-                    onClick={toggleTheme}
-                    hoverColor="#d9dc25"
-                    animate={firstLoad}
-                  >
-                    {dark ? <FaSun /> : <FaMoon />}
-                  </Button>
-                </li>
-                <li className="menu-toggle">
-                  <MenuToggle />
-                </li>
-              </ul>
-            </nav>
-          </Navigation>
-        </Items>
-      </Container>
-      <Search searching={searching} handleClose={handleSearch} />
-    </>
+    <Container dark={dark}>
+      <Items>
+        <Title>
+          <Link to="/">{'<YuriBurk />'}</Link>
+        </Title>
+        <Navigation>
+          <nav>
+            <ul>
+              <li>
+                <Link className="hide-small" to="/">
+                  home
+                </Link>
+              </li>
+              <li>
+                <Link className="hide-small" to="/about">
+                  sobre mim
+                </Link>
+              </li>
+              <li>
+                <Button dark>
+                  <FaSearch onClick={() => navigate('/search')} />
+                </Button>
+              </li>
+              <li>
+                <Button
+                  dark={dark}
+                  onClick={toggleTheme}
+                  hoverColor="#d9dc25"
+                  animate={firstLoad}
+                >
+                  {dark ? <FaSun /> : <FaMoon />}
+                </Button>
+              </li>
+              <li className="menu-toggle">
+                <MenuToggle />
+              </li>
+            </ul>
+          </nav>
+        </Navigation>
+      </Items>
+    </Container>
   );
 };
 

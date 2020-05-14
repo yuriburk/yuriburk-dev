@@ -18,7 +18,10 @@ const MenuDrawer: React.FC<IMenuDrawerProps> = ({ isMenuOpened }) => {
           <Link to="/">home</Link>
         </li>
         <li>
-          <Link to="/about">about</Link>
+          <Link to="/tags">tags</Link>
+        </li>
+        <li>
+          <Link to="/about">sobre mim</Link>
         </li>
       </ul>
     </Container>

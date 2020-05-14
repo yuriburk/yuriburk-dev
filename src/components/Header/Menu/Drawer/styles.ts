@@ -32,8 +32,7 @@ export const Container = styled.div(
 
       li {
         padding: 05px 10px;
-        margin: 0;
-        margin: 25px 0;
+        margin: 20px;
         font-weight: bold;
 
         a {
