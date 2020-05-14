@@ -12,7 +12,7 @@ interface ILayoutProps {
 }
 
 const Layout: React.FC<ILayoutProps> = ({ showSidebar = true, children }) => {
-  const { dark } = useTheme();
+  const { dark, isLayoutActive } = useTheme();
 
   return (
     <div>
@@ -28,7 +28,7 @@ const Layout: React.FC<ILayoutProps> = ({ showSidebar = true, children }) => {
         )}
       </Content>
       <Footer />
-      <GlobalStyle dark={dark} />
+      <GlobalStyle dark={dark} isLayoutActive={isLayoutActive} />
     </div>
   );
 };

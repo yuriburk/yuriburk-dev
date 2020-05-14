@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle, css } from 'styled-components';
 
-import { IThemeProps } from '../../styles/themes';
+import { theme } from '../../styles/themes';
 
 export const Content = styled.div`
   display: flex;
@@ -11,8 +11,13 @@ export const Content = styled.div`
   margin-top: 4rem;
 `;
 
+interface IGlobalStyleProps {
+  dark: boolean;
+  isLayoutActive: boolean;
+}
+
 export default createGlobalStyle(
-  ({ dark, theme }: IThemeProps) => css`
+  ({ dark, isLayoutActive }: IGlobalStyleProps) => css`
     header,
     body {
       -webkit-font-smoothing: antialiased;
@@ -27,6 +32,13 @@ export default createGlobalStyle(
         ? theme.colors.primaryDark
         : theme.colors.primaryWhite};
       overflow-x: hidden;
+
+      ${isLayoutActive &&
+      css`
+        ${theme.screenSizes.lg} {
+          overflow-y: hidden;
+        }
+      `}
     }
 
     html,

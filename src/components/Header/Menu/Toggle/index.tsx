@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import MenuDrawer from '../Drawer';
 import { Container } from './styles';
+import { useTheme } from '../../../../hooks/theme';
 
 const MenuToggle: React.FC = () => {
   const [isOpened, setIsOpened] = useState(false);
+  const { activateLayout } = useTheme();
+
+  useEffect(() => activateLayout(isOpened), [isOpened, activateLayout]);
 
   return (
     <>
