@@ -2,17 +2,6 @@ import styled, { css } from 'styled-components';
 
 import { IThemeProps } from '../../styles/themes';
 
-export const Container = styled.div(
-  ({ dark, theme }: IThemeProps) => css`
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-    border-radius: 0.5rem;
-    background-color: ${dark
-      ? theme.colors.secundaryDark
-      : theme.colors.secundaryWhite};
-  `,
-);
-
 export const SearchContainer = styled.div(
   ({ dark, theme }: IThemeProps) => css`
     display: flex;
@@ -26,8 +15,8 @@ export const SearchContainer = styled.div(
     margin-top: 10px;
     border-radius: 0.5rem;
     background-color: ${dark
-      ? theme.colors.primaryDark
-      : theme.colors.primaryWhite};
+      ? theme.colors.secundaryDark
+      : theme.colors.secundaryWhite};
 
     input {
       padding: 0 15px;
@@ -35,8 +24,8 @@ export const SearchContainer = styled.div(
       border: 0;
       width: 100%;
       background-color: ${dark
-        ? theme.colors.primaryDark
-        : theme.colors.primaryWhite};
+        ? theme.colors.secundaryDark
+        : theme.colors.secundaryWhite};
       color: ${theme.colors.blue};
       font-size: 15px;
     }

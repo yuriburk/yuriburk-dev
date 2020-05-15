@@ -62,6 +62,7 @@ exports.createPages = ({ graphql, actions }) => {
                     title
                     image
                     tags
+                    slug
                   }
                 }
               }
@@ -102,7 +103,8 @@ exports.createPages = ({ graphql, actions }) => {
 
         const posts = items.filter(item => item.node.fields.source === 'posts');
         posts.forEach(({ node }, index) => {
-          const { slug, source } = node.fields;
+          const { source } = node.fields;
+          const { slug } = node.frontmatter;
           createPage({
             path: slug,
             component: postTemplate,

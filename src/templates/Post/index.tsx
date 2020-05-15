@@ -17,8 +17,7 @@ const Post: React.FC<IPostProps> = ({ data }) => {
   const { dark } = useTheme();
   const { markdownRemark } = data;
   const { html, frontmatter, timeToRead } = markdownRemark;
-  const { slug } = markdownRemark.fields;
-  const { title, tags, date, description, image } = frontmatter;
+  const { title, tags, date, description, image, slug } = frontmatter;
 
   return (
     <Layout>
@@ -47,7 +46,7 @@ export default Post;
 
 export const pageQuery = graphql`
   query PostPage($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
       timeToRead
       excerpt
@@ -57,8 +56,6 @@ export const pageQuery = graphql`
         tags
         description
         image
-      }
-      fields {
         slug
       }
     }

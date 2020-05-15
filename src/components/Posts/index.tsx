@@ -25,8 +25,8 @@ const Posts: React.FC<IPostsProps> = ({ data }) => {
       {edges.map(({ node }: any) => (
         <Post
           dark={dark}
-          key={node.fields.slug}
-          onClick={() => navigate(node.fields.slug)}
+          key={node.frontmatter.slug}
+          onClick={() => navigate(node.frontmatter.slug)}
         >
           {node.frontmatter.image && (
             <ImageContainer>

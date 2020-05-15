@@ -43,9 +43,6 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          fields {
-            slug
-          }
           timeToRead
           frontmatter {
             title
@@ -53,6 +50,7 @@ export const pageQuery = graphql`
             date(formatString: "DD/MM/YYYY")
             description
             image
+            slug
           }
         }
       }
