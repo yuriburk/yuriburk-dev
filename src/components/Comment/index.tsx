@@ -21,7 +21,6 @@ const Comment: React.FC<ICommentProps> = ({ slug, title }) => {
 
   return (
     <Container dark={dark}>
-      <CommentCount config={disqusConfig} placeholder="Comentários 😊" />
       <Disqus config={disqusConfig} />
     </Container>
   );
