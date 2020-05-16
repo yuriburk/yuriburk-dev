@@ -8,6 +8,7 @@ import Content from '../../components/Content';
 import IMarkdownRemark from '../../interfaces/IMarkdownRemark';
 import { useTheme } from '../../hooks/theme';
 import { Container } from './styles';
+import Comment from '../../components/Comment';
 
 interface IPostProps {
   data: IMarkdownRemark;
@@ -38,6 +39,7 @@ const Post: React.FC<IPostProps> = ({ data }) => {
         />
         <Content image={image} html={html} />
       </Container>
+      <Comment slug={slug} title={title} />
     </Layout>
   );
 };

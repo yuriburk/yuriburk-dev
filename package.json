@@ -19,6 +19,7 @@
     "gatsby": "^2.21.24",
     "gatsby-awesome-pagination": "^0.3.5",
     "gatsby-plugin-catch-links": "^2.3.0",
+    "gatsby-plugin-disqus": "^1.1.4",
     "gatsby-plugin-feed": "^2.5.0",
     "gatsby-plugin-google-analytics": "^2.3.0",
     "gatsby-plugin-manifest": "^2.4.1",
