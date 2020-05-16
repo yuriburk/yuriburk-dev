@@ -66,6 +66,8 @@ export default createGlobalStyle(
     }
 
     main {
+      display: flex;
+      flex-direction: column;
       flex: 1 1 71%;
       padding: 0 8px;
       min-height: 100vh;

@@ -27,12 +27,10 @@ export const Container = styled.div(
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: space-evenly;
       height: 100%;
 
       li {
-        padding: 0 10px;
-        margin: 2.5rem 0;
         font-weight: bold;
 
         a {

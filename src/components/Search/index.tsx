@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { graphql, Link, StaticQuery } from 'gatsby';
 import { Index, SerialisedIndexData, SearchResults } from 'elasticlunr';
 import { FaTimes } from 'react-icons/fa';
 
+import noResults from '../../../content/images/no-results.png';
 import Layout from '../Layout';
-import { useTheme } from '../../hooks/theme';
-import { SearchContainer } from './styles';
 import SEO from '../SEO';
+import { useTheme } from '../../hooks/theme';
+import { SearchContainer, Page, ImageContainer } from './styles';
 
 interface ISiteSearchIndex {
   siteSearchIndex: {
@@ -27,6 +28,11 @@ const Search: React.FC = () => {
   const [selectedIndex, setSelectedIndex] = useState<Index<never> | undefined>(
     undefined,
   );
+
+  const handleClear = useCallback(() => {
+    setQuery('');
+    setResults([]);
+  }, []);
 
   return (
     <StaticQuery
@@ -75,13 +81,16 @@ const Search: React.FC = () => {
                 value={query}
                 onChange={search}
               />
-              <FaTimes size={25} onClick={() => setQuery('')} />
+              <FaTimes size={25} onClick={handleClear} />
             </SearchContainer>
             {results.map((page: IPageProps) => (
-              <li key={page.id}>
+              <Page dark={dark}>
                 <Link to={`/${page.slug}`}>{`${page.title}`}</Link>
-              </li>
+              </Page>
             ))}
+            <ImageContainer hide={results.length > 0}>
+              <img src={noResults} alt="no-results" />
+            </ImageContainer>
           </Layout>
         );
       }}

@@ -35,3 +35,43 @@ export const SearchContainer = styled.div(
     }
   `,
 );
+
+export const Page = styled.div(
+  ({ dark, theme }: IThemeProps) => css`
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 0.5rem;
+    background-color: ${dark
+      ? theme.colors.secundaryDark
+      : theme.colors.secundaryWhite};
+
+    a {
+      color: ${theme.colors.blue};
+      text-decoration: none;
+    }
+  `,
+);
+
+interface IImageContainerProps {
+  hide: boolean;
+}
+
+export const ImageContainer = styled.div<IImageContainerProps>`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.15s, opacity 0.5s;
+  ${({ hide }) =>
+    hide &&
+    css`
+      visibility: hidden;
+      opacity: 0;
+    `}
+
+  img {
+    opacity: 0.5;
+  }
+`;
