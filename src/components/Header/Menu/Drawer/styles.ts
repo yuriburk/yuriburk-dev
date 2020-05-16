@@ -31,8 +31,8 @@ export const Container = styled.div(
       height: 100%;
 
       li {
-        padding: 05px 10px;
-        margin: 20px;
+        padding: 0 10px;
+        margin: 2.5rem 0;
         font-weight: bold;
 
         a {
