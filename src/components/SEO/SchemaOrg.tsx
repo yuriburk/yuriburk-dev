@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-interface SchemaOrgProps {
+interface ISchemaOrgProps {
   author: {
     name: string;
   };
@@ -20,7 +20,7 @@ interface SchemaOrgProps {
   url: string;
 }
 
-const SchemaOrg: React.FC<SchemaOrgProps> = ({
+const SchemaOrg: React.FC<ISchemaOrgProps> = ({
   author,
   siteUrl,
   datePublished,
@@ -69,7 +69,7 @@ const SchemaOrg: React.FC<SchemaOrgProps> = ({
           headline: title,
           image: {
             '@type': 'ImageObject',
-            url: image,
+            url: `${siteUrl}${image}`,
           },
           description,
           author: {
