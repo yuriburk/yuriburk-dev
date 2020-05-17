@@ -11,6 +11,7 @@ interface ISEOProps {
   url?: string;
   article?: boolean;
   datePublished?: Date;
+  image?: string;
 }
 
 const SEO: React.FC<ISEOProps> = ({
@@ -19,11 +20,12 @@ const SEO: React.FC<ISEOProps> = ({
   url,
   article,
   datePublished,
+  image,
 }) => {
   const seo = {
     title: title ? `${title} | ${config.siteTitle}` : config.siteTitle,
     description: description || config.siteDescription,
-    image: config.siteImage,
+    image: image || `${config.siteUrl}${config.siteImage}`,
     url: url ? `${config.siteUrl}${url}` : '',
     datePublished: article ? datePublished : false,
   };

@@ -4,7 +4,7 @@ const config = {
     'Meu blog pessoal para falar sobre React, Node, C# e muito mais!',
   siteTitleShort: 'Yuri Burk',
   siteRss: '/rss.xml',
-  siteImage: '/img/banner.png',
+  siteImage: 'img/banner.png',
   siteLogo: '/favicon.png',
   googleAnalyticsID: process.env.GATSBY_GOOGLE_ANALYTICS_ID,
   themeColor: '#000000',
