@@ -43,6 +43,10 @@ export const Title = styled.div`
     ${theme.screenSizes.lg} {
       font-size: 20px;
     }
+
+    ${theme.screenSizes.xsm} {
+      font-size: 18px;
+    }
   }
 `;
 
