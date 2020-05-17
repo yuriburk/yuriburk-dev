@@ -32,8 +32,6 @@ const SEO: React.FC<ISEOProps> = ({
     datePublished: article ? datePublished : false,
   };
 
-  console.log(seo.smallImage);
-
   return (
     <>
       <Helmet title={seo.title}>
@@ -57,8 +55,14 @@ const SEO: React.FC<ISEOProps> = ({
         {seo.description && (
           <meta property="og:description" content={seo.description} />
         )}
-        {seo.image && <meta property="og:image" content={seo.image} />}
-        {seo.image && <meta property="og:image" content={seo.smallImage} />}
+        <meta property="og:image" content={seo.image} />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1290" />
+        <meta property="og:image:height" content="759" />
+        <meta property="og:image" content={seo.smallImage} />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="256" />
+        <meta property="og:image:height" content="256" />
         {seo.title && <meta name="twitter:title" content={seo.title} />}
         {seo.image && <meta name="twitter:image" content={seo.image} />}
         <meta name="twitter:card" content="summary_large_image" />
