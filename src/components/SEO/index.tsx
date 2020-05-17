@@ -57,7 +57,7 @@ const SEO: React.FC<ISEOProps> = ({
         {seo.description && (
           <meta property="og:description" content={seo.description} />
         )}
-        {/* {seo.image && <meta property="og:image" content={seo.image} />} */}
+        {seo.image && <meta property="og:image" content={seo.image} />}
         {seo.image && <meta property="og:image" content={seo.smallImage} />}
         {seo.title && <meta name="twitter:title" content={seo.title} />}
         {seo.image && <meta name="twitter:image" content={seo.image} />}
