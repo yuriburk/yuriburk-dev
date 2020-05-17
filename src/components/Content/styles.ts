@@ -4,7 +4,7 @@ import { theme } from '../../styles/themes';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  padding-bottom: 45px;
+  padding-bottom: 25px;
 
   img {
     margin: 25px;

@@ -9,7 +9,11 @@ export const Container = styled.div(
     background-color: ${dark
       ? theme.colors.secundaryDark
       : theme.colors.secundaryWhite};
-    padding: 1.8rem;
+    padding: 1.5rem;
     border-radius: 0.5rem;
+
+    ${theme.screenSizes.md} {
+      padding: 1.5rem 5px;
+    }
   `,
 );
