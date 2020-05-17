@@ -92,6 +92,10 @@ test("Calculator sum should be ok", () => {
 
 <br />
 
+O método `test` recebe a descrição do que vai ser testado e também uma função, que executa o nosso cenário de teste. Dentro do `expect` eu passo primeiro a nossa ação, e logo depois eu chamo o `toBe` que recebe qual é o resultado esperado daquela ação. Se formos ler o código podemos notar que é altamente fluente: "**O teste A soma da calculadora deve estar ok espera que a soma da calculadora 2 + 2 deve ser 4**".
+
+<br />
+
 Agora basta rodar `yarn jest` que exibirá o seguinte no terminal:
 ```terminal
  PASS  src/Calculator/index.test.js
@@ -104,10 +108,6 @@ Time:        1.503 s
 Ran all test suites.
 Done in 2.38s.
 ```
-<br />
-
-O método `test` recebe a descrição do que vai ser testado e também uma função, que executa o nosso cenário de teste. Dentro do `expect` eu passo primeiro a nossa ação, e logo depois eu chamo o `toBe` que recebe qual é o resultado esperado daquela ação. Se formos ler o código podemos notar que é altamente fluente: "O teste **A soma da calculadora deve estar ok** espera que a soma da calculadora 2 + 2 deve ser 4".
-
 <br />
 
 Futuramente iremos colocar Typescript no nosso projeto e começar a desenvolver testes mais complexos. Mas com isso você já aprendeu o básico, de modo muito simples, para começar a desenvolver testes unitários assertivos em sua aplicação.
