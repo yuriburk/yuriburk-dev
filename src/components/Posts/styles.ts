@@ -55,6 +55,7 @@ export const ImageContainer = styled.div`
 
     ${theme.screenSizes.lg} {
       width: 80px;
+      height: 80px;
       margin-bottom: 15px;
     }
   }
