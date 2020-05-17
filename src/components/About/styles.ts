@@ -27,6 +27,11 @@ export const Container = styled.div`
     text-align: justify;
     line-height: 1.5;
   }
+
+  ul {
+    list-style: disc;
+    margin-left: 15px;
+  }
 `;
 
 export const Wallpaper = styled.div`

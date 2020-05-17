@@ -51,6 +51,23 @@ const About: React.FC = () => (
           tal motivo desenvolvi este blog como forma de estudo utilizando
           Gatsby, onde irei compartilhar um pouco do que estou estudando.
         </p>
+
+        <h2>Habilidades</h2>
+        <ul>
+          <li>C#</li>
+          <li>Node.js</li>
+          <li>React.js</li>
+          <li>React Native</li>
+          <li>Javascript (ES6+)</li>
+          <li>HTML</li>
+          <li>CSS (Design Responsivo)</li>
+          <li>Git</li>
+          <li>Scrum</li>
+          <li>Architectural Patterns</li>
+          <li>Testes Automatizados</li>
+          <li>Bancos de dados relacionais e não relacionais</li>
+        </ul>
+
         <h2>Alguns projetos</h2>
         <Project>
           <div>

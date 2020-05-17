@@ -19,17 +19,6 @@ export const Container = styled.div`
     }
   }
 
-  ul {
-    list-style: disc;
-    margin-left: 21px;
-  }
-
-  ol {
-    li {
-      margin-left: 21px;
-    }
-  }
-
   h1,
   h2,
   h3,

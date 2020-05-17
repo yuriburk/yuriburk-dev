@@ -56,9 +56,28 @@ export default createGlobalStyle(
     }
 
     p,
-    div {
+    span,
+    li {
+      text-align: justify;
+      letter-spacing: 0.2px;
+      line-height: 1.5;
       font-size: 18px;
       color: ${dark ? theme.colors.secundaryWhite : theme.colors.primaryDark};
+    }
+
+    ul {
+      list-style: disc;
+      margin-left: 21px;
+    }
+
+    ol {
+      li {
+        margin-left: 21px;
+      }
+    }
+
+    li {
+      margin: 10px 0;
     }
 
     svg {
