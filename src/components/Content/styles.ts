@@ -4,8 +4,7 @@ import { theme } from '../../styles/themes';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-
-  line-height: 1.5;
+  padding-bottom: 45px;
 
   img {
     margin: 25px;
@@ -40,10 +39,6 @@ export const Container = styled.div`
     }
   }
 
-  p {
-    text-align: justify;
-  }
-
   a {
     color: ${theme.colors.blue};
   }
@@ -54,6 +49,10 @@ export const Container = styled.div`
     white-space: -pre-wrap;
     white-space: -o-pre-wrap;
     word-wrap: break-word;
+  }
+
+  .language-text {
+    padding: 2.5px;
   }
 `;
 

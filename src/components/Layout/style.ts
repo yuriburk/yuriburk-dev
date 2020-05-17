@@ -58,9 +58,8 @@ export default createGlobalStyle(
     p,
     span,
     li {
-      text-align: justify;
-      letter-spacing: 0.2px;
-      line-height: 1.5;
+      letter-spacing: 0.5px;
+      line-height: 1.85;
       font-size: 18px;
       color: ${dark ? theme.colors.secundaryWhite : theme.colors.primaryDark};
     }

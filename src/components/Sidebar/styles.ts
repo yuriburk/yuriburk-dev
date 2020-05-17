@@ -22,11 +22,9 @@ export const Container = styled.div(
 
     p {
       text-align: justify;
-      line-height: 1.5;
     }
 
     span {
-      line-height: 1.5;
       ${theme.screenSizes.lg} {
         text-align: left;
       }

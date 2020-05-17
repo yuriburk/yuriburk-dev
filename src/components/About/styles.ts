@@ -25,7 +25,6 @@ export const Container = styled.div`
 
   p {
     text-align: justify;
-    line-height: 1.5;
   }
 
   ul {
@@ -92,6 +91,7 @@ export const Project = styled.div`
   }
 
   h4 {
+    font-size: 20px;
     font-weight: 800;
     margin-bottom: 5px;
   }
