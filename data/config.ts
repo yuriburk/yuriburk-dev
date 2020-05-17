@@ -5,6 +5,7 @@ const config = {
   siteTitleShort: 'Yuri Burk',
   siteRss: '/rss.xml',
   siteImage: 'img/banner.png',
+  siteSmallImage: 'img/banner-small.png',
   siteLogo: '/favicon.png',
   googleAnalyticsID: process.env.GATSBY_GOOGLE_ANALYTICS_ID,
   themeColor: '#000000',

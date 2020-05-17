@@ -23,9 +23,11 @@ const SEO: React.FC<ISEOProps> = ({
   image,
 }) => {
   const seo = {
+    siteTitle: config.siteTitle,
     title: title ? `${title} | ${config.siteTitle}` : config.siteTitle,
     description: description || config.siteDescription,
     image: image || `${config.siteUrl}${config.siteImage}`,
+    smallImage: `${config.siteUrl}${config.siteSmallImage}`,
     url: url ? `${config.siteUrl}${url}` : '',
     datePublished: article ? datePublished : false,
   };
@@ -47,17 +49,27 @@ const SEO: React.FC<ISEOProps> = ({
         ) : (
           <meta property="og:type" content="website" />
         )}
-        {seo.title && <meta property="og:title" content={seo.title} />}
+        {seo.title && (
+          <>
+            <meta property="og:title" content={seo.title} />
+            <meta name="twitter:title" content={seo.title} />
+            <meta property="og:site_name" content={seo.siteTitle} />
+          </>
+        )}
         {seo.description && (
           <meta property="og:description" content={seo.description} />
         )}
-        {seo.image && <meta property="og:image" content={seo.image} />}
+        {seo.image && (
+          <>
+            <meta name="twitter:image" content={seo.image} />
+            <meta property="og:image" content={seo.image} />
+            <meta property="og:image" content={seo.smallImage} />
+          </>
+        )}
         <meta name="twitter:card" content="summary_large_image" />
-        {seo.title && <meta name="twitter:title" content={seo.title} />}
         {seo.description && (
           <meta name="twitter:description" content={seo.description} />
         )}
-        {seo.image && <meta name="twitter:image" content={seo.image} />}
       </Helmet>
       <SchemaOrg
         author={{ name: config.siteTitle }}
