@@ -59,4 +59,9 @@ export const Container = styled.div`
 export const Center = styled.div`
   display: flex;
   justify-content: center;
+
+  img {
+    object-fit: cover;
+    max-height: 250px;
+  }
 `;
