@@ -28,7 +28,7 @@ const Socials: React.FC<ISocialsProps> = ({ color }) => (
     />
     <SocialIcon
       icon={FaInstagram}
-      url="https://instagram.com/yuriburk"
+      url="https://instagram.com/yuricunhaburk"
       color={color}
     />
     <SocialIcon

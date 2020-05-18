@@ -56,12 +56,25 @@ export const Container = styled.div`
   }
 `;
 
-export const Center = styled.div`
+export const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
 
   img {
     object-fit: cover;
     max-height: 250px;
+  }
+`;
+
+export const SocialsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+
+  ${theme.screenSizes.lg} {
+    margin-top: 25px;
+    align-items: center;
   }
 `;
