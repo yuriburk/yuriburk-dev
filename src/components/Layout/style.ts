@@ -90,6 +90,7 @@ export default createGlobalStyle(
       padding: 0 8px;
       min-height: 100vh;
       height: max-content;
+      max-width: 100%;
 
       ${theme.screenSizes.xl} {
         flex: 1 1 100%;
