@@ -23,7 +23,7 @@ const Posts: React.FC<IPostsProps> = ({ data }) => {
 
   return (
     <Container>
-      {edges.map(({ node }: object) => (
+      {edges.map(({ node }: any) => (
         <Post
           dark={dark}
           key={node.frontmatter.slug}
