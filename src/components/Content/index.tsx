@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, ImageContainer, SocialsContainer } from './styles';
+import { Container, ImageContainer } from './styles';
 import Socials from '../Socials';
 
 interface IContentProps {
@@ -14,9 +14,6 @@ const Content: React.FC<IContentProps> = ({ image, html }) => (
       {image && <img src={image} alt="post-img" />}
     </ImageContainer>
     <div dangerouslySetInnerHTML={{ __html: html }} />
-    <SocialsContainer>
-      <Socials color="#55585b" />
-    </SocialsContainer>
   </Container>
 );
 

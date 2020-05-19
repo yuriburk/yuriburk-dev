@@ -65,16 +65,3 @@ export const ImageContainer = styled.div`
     max-height: 250px;
   }
 `;
-
-export const SocialsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-
-  ${theme.screenSizes.lg} {
-    margin-top: 25px;
-    align-items: center;
-  }
-`;
