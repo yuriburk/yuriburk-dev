@@ -14,6 +14,7 @@
     "@types/elasticlunr": "^0.9.0",
     "@types/react-syntax-highlighter": "^11.0.4",
     "@types/styled-components": "^5.1.0",
+    "@types/url-join": "^4.0.0",
     "babel-plugin-polished": "^1.1.0",
     "elasticlunr": "^0.9.5",
     "gatsby": "^2.21.24",
@@ -50,7 +51,8 @@
     "react-helmet": "^6.0.0",
     "react-icons": "^3.10.0",
     "react-share": "^4.1.0",
-    "styled-components": "^5.1.0"
+    "styled-components": "^5.1.0",
+    "url-join": "^4.0.1"
   },
   "devDependencies": {
     "@types/react": "^16.9.34",

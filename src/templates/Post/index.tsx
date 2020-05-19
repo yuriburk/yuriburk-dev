@@ -77,6 +77,7 @@ export const pageQuery = graphql`
         tags
         description
         image
+        smallImage
         slug
       }
     }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import UrlJoin from 'url-join';
 
 import config from '../../../data/config';
 import SchemaOrg from './SchemaOrg';
@@ -28,11 +29,17 @@ const SEO: React.FC<ISEOProps> = ({
     siteTitle: config.siteTitle,
     title: title ? `${title} | ${config.siteTitle}` : config.siteTitle,
     description: description || config.siteDescription,
-    image: image ?? `${config.siteUrl}${config.siteImage}`,
-    smallImage: smallImage ?? `${config.siteUrl}${config.siteSmallImage}`,
+    image: image
+      ? UrlJoin(config.siteUrl, image)
+      : UrlJoin(config.siteUrl, config.siteImage),
+    smallImage: smallImage
+      ? UrlJoin(config.siteUrl, smallImage)
+      : UrlJoin(config.siteUrl, config.siteSmallImage),
     url: url ? `${config.siteUrl}${url}` : '',
     datePublished: article ? datePublished : false,
   };
+
+  console.log(seo.image, seo.smallImage);
 
   return (
     <>
