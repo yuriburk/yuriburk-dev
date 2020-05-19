@@ -1,22 +1,23 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-import { theme, IThemeProps } from '../../styles/themes';
+import { theme } from '../../styles/themes';
 
-export const Container = styled.div(
-  ({ dark, theme }: IThemeProps) => css`
-    display: flex;
-    flex-direction: column;
-    background-color: ${dark
-      ? theme.colors.secundaryDark
-      : theme.colors.secundaryWhite};
-    padding: 1.5rem;
-    border-radius: 0.5rem;
+interface IContainerProps {
+  dark: boolean;
+}
 
-    ${theme.screenSizes.md} {
-      padding: 1.5rem 5px;
-    }
-  `,
-);
+export const Container = styled.div<IContainerProps>`
+  display: flex;
+  flex-direction: column;
+  background-color: ${props =>
+    props.dark ? theme.colors.secundaryDark : theme.colors.secundaryWhite};
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+
+  ${theme.screenSizes.md} {
+    padding: 1.5rem 5px;
+  }
+`;
 
 export const Bottom = styled.div`
   display: flex;
@@ -27,7 +28,7 @@ export const Bottom = styled.div`
   margin-top: 20px;
 `;
 
-export const Author = styled.div`
+export const Author = styled.button`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,6 +45,12 @@ export const Author = styled.div`
   }
 
   h2 {
+    margin-top: 5px;
+    font-size: 15px;
     font-weight: 800;
+
+    ${theme.screenSizes.xsm} {
+      font-size: 12px;
+    }
   }
 `;

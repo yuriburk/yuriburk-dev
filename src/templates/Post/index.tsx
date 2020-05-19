@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, navigate } from 'gatsby';
 
 import profile from '../../../content/images/yuriburk.jpg';
 import Layout from '../../components/Layout';
@@ -42,7 +42,7 @@ const Post: React.FC<IPostProps> = ({ data }) => {
         <Content image={image} html={html} />
         <Bottom>
           <SocialsShare title={title} slug={slug} />
-          <Author>
+          <Author onClick={() => navigate('/about')}>
             <img src={profile} alt="Yuri Burk" />
             <h2>Yuri Burk</h2>
           </Author>

@@ -32,18 +32,18 @@ const SocialsShare: React.FC<ISocialsShare> = ({ title, slug }) => {
         </h1>
       </div>
       <div>
-        <TwitterShareButton url={url} title={title}>
-          <TwitterIcon round size={35} />
-        </TwitterShareButton>
-        <WhatsappShareButton url={url} title={title}>
-          <WhatsappIcon round size={35} />
-        </WhatsappShareButton>
         <FacebookShareButton url={url}>
           <FacebookIcon round size={35} />
         </FacebookShareButton>
         <LinkedinShareButton url={url}>
           <LinkedinIcon round size={35} />
         </LinkedinShareButton>
+        <TwitterShareButton url={url} title={title}>
+          <TwitterIcon round size={35} />
+        </TwitterShareButton>
+        <WhatsappShareButton url={url} title={title}>
+          <WhatsappIcon round size={35} />
+        </WhatsappShareButton>
       </div>
     </Container>
   );
