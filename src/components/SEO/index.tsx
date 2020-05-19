@@ -39,8 +39,6 @@ const SEO: React.FC<ISEOProps> = ({
     datePublished: article ? datePublished : false,
   };
 
-  console.log(seo.image, seo.smallImage);
-
   return (
     <>
       <Helmet title={seo.title}>
