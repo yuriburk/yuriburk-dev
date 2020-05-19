@@ -11,9 +11,10 @@ import {
 } from './styles';
 import { useTheme } from '../../hooks/theme';
 import PostInfo from '../PostInfo';
+import IAllMarkdownRemark from '../../interfaces/IAllMarkdownRemark';
 
 interface IPostsProps {
-  data: any;
+  data: IAllMarkdownRemark;
 }
 
 const Posts: React.FC<IPostsProps> = ({ data }) => {
@@ -22,15 +23,18 @@ const Posts: React.FC<IPostsProps> = ({ data }) => {
 
   return (
     <Container>
-      {edges.map(({ node }: any) => (
+      {edges.map(({ node }: object) => (
         <Post
           dark={dark}
           key={node.frontmatter.slug}
           onClick={() => navigate(node.frontmatter.slug)}
         >
-          {node.frontmatter.image && (
+          {(node.frontmatter.smallImage || node.frontmatter.image) && (
             <ImageContainer>
-              <img src={node.frontmatter.image} alt="post-img" />
+              <img
+                src={node.frontmatter.smallImage ?? node.frontmatter.image}
+                alt="post-img"
+              />
             </ImageContainer>
           )}
           <InfoContainer>

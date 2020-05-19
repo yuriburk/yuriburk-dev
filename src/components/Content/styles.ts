@@ -7,7 +7,7 @@ export const Container = styled.div`
   padding-bottom: 25px;
 
   img {
-    margin: 25px;
+    margin: 25px 0;
   }
 
   h1 {
@@ -61,7 +61,8 @@ export const ImageContainer = styled.div`
   justify-content: center;
 
   img {
+    width: 100%;
     object-fit: cover;
-    max-height: 250px;
+    max-height: 350px;
   }
 `;

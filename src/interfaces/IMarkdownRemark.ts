@@ -7,6 +7,7 @@ export default interface IMarkdownRemark {
       date: Date;
       description: string;
       image: string;
+      smallImage: string;
       slug: string;
     };
     timeToRead: number;

@@ -49,7 +49,6 @@ export const ImageContainer = styled.div`
   }
 
   img {
-    height: 195px;
     object-fit: cover;
     border-radius: 5px;
 

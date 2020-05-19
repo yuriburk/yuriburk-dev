@@ -20,7 +20,15 @@ const Post: React.FC<IPostProps> = ({ data }) => {
   const { dark } = useTheme();
   const { markdownRemark } = data;
   const { html, frontmatter, timeToRead } = markdownRemark;
-  const { title, tags, date, description, image, slug } = frontmatter;
+  const {
+    title,
+    tags,
+    date,
+    description,
+    image,
+    smallImage,
+    slug,
+  } = frontmatter;
 
   return (
     <Layout>
@@ -31,6 +39,8 @@ const Post: React.FC<IPostProps> = ({ data }) => {
           description={description}
           article
           datePublished={date}
+          image={image}
+          smallImage={smallImage}
         />
         <PostInfo
           title={title}

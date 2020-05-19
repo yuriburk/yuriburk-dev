@@ -14,6 +14,7 @@ collections:
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - { name: image, label: Image, widget: image }
+      - { name: smallImage, label: Image, widget: image }
       - { name: description, label: Description }
       - { name: tags, widget: list }
       - { name: body, label: Body, widget: markdown }

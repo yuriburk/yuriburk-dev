@@ -1,7 +1,8 @@
 ---
 date: 2020-05-17T16:10:50.617Z
 title: Criando testes unitários com Jest em uma aplicação Node.js
-image: /img/posts/jest.png
+image: /img/posts/jest-banner.png
+smallImage: /img/posts/jest.png
 description: Jest é um framework para criar fácilmente testes automatizados no Javascript
 tags:
   - Jest
