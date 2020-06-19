@@ -12,11 +12,7 @@ slug: criando-testes-unitarios-com-jest-em-uma-aplicacao-node-js
 
 Imagine um cenário onde temos diversos desenvolvedores, trabalhando em diferentes funcionalidades que utilizam classes compartilhadas. Muito provavelmente quando realizarem o merge alguns conflitos acontecerão, tendo que serem resolvidos manualmente. Agora vamos pensar em um método que teve que ser alterado para atender outro critério de aceite, como garantir que não teremos problemas na outra parte do nosso sistema?
 
-<br />
-
 Para isso, os **testes automatizados** garantem que a nossa aplicação continue funcionando independente do número de novas funcionalidades ou de desenvolvedores no time.
-
-<br />
 
 Temos alguns tipos de testes automatizados:
 
@@ -25,7 +21,6 @@ Temos alguns tipos de testes automatizados:
   <li><strong>Testes de integração</strong>: Testam uma funcionalidade completa, passando por várias camadas da aplicação.</li>
   <li><strong>Testes E2E</strong>: Simulam a ação do usuário dentro da aplicação.</li>
 </ol>
-<br />
 
 Neste post, irei mostrar como criar testes unitários no Javascript utilizando o Jest.
 
@@ -41,15 +36,11 @@ Primeiro, vamos criar uma aplicação Node.js executando o seguinte comando:
 yarn init -y
 ```
 
-<br />
-
 Agora vamos instalar o Express:
 
 ```console
 yarn add express
 ```
-
-<br />
 
 Com isso, podemos criar nosso servidor básico em um novo arquivo `app.js`:
 
@@ -67,8 +58,6 @@ app.listen(5000, function () {
 });
 ```
 
-<br />
-
 Como você deve ter percebido nas importações, foi criado um objeto chamado `calculator`, para isso basta criar o arquivo `src/Calculator/index.js`:
 
 ```javascript
@@ -81,11 +70,7 @@ const calculator = {
 module.exports = calculator;
 ```
 
-<br />
-
 Se tudo tiver dado certo, você pode executar `node app.js` que deve nos retornar no log: `🚀 Servidor rodando na porta 5000`.
-
-<br />
 
 Agora vamos adicionar o Jest rodando `yarn add jest -D`, e criar o nosso arquivo de testes `index.test.js` na mesma pasta da nossa calculadora:
 
@@ -97,11 +82,7 @@ test('Calculator sum should be ok', () => {
 });
 ```
 
-<br />
-
 O método `test` recebe a descrição do que vai ser testado e também uma função, que executa o nosso cenário de teste. Dentro do `expect` eu passo primeiro a nossa ação, e logo depois eu chamo o `toBe` que recebe qual é o resultado esperado daquela ação. Se formos ler o código podemos notar que é altamente fluente: "**O teste A soma da calculadora deve estar ok espera que a soma da calculadora 2 + 2 deve ser 4**".
-
-<br />
 
 Agora basta rodar `yarn jest` que exibirá o seguinte no terminal:
 
@@ -116,7 +97,5 @@ Time:        1.503 s
 Ran all test suites.
 Done in 2.38s.
 ```
-
-<br />
 
 Futuramente iremos colocar Typescript no nosso projeto e começar a desenvolver testes mais complexos. Mas com isso você já aprendeu o básico, de modo muito simples, para começar a desenvolver testes unitários assertivos em sua aplicação.

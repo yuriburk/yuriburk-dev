@@ -6,6 +6,10 @@ export const Container = styled.div`
   flex-direction: column;
   padding-bottom: 25px;
 
+  p {
+    margin: 1.5rem 0;
+  }
+
   img {
     margin: 25px 0;
   }
@@ -25,7 +29,7 @@ export const Container = styled.div`
   h5 {
     font-weight: 800;
     word-break: break-word;
-    margin: 25px 0;
+    margin: 2.5rem 0;
   }
 
   h2,

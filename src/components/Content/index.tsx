@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Container, ImageContainer } from './styles';
-import Socials from '../Socials';
 
 interface IContentProps {
   image: string;
