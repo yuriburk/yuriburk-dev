@@ -12,7 +12,7 @@ slug: mas-afinal-o-que-eh-redux-e-como-utiliza-lo
 
 <p>O Redux é uma biblioteca que pode parecer desafiadora e até mesmo assustadora para muitos desenvolvedores. Se você também se sente assim, calma, isso é mais normal do que você imagina.</p>
 
-<p>Apesar de ser muito útil e amplamente utilizado, um grande erro cometido é querer colocar o Redux em qualquer aplicação independentemente do tamanho ou complexidade. Caso sua aplicação seja simples, tendo os componentes bem ligados, você pode passar a informação diretamente entre eles, seja simplesmente passando props e callbacks ou usando o ContextAPI, o Redux neste caso pode gerar uma complexidade desnecessária no seu projeto. A verdade é que se você não sabe o por que você precisa usar o Redux em sua aplicação, a grande chance é que você realmente não precise usar. Porém, caso você seja um curioso assim como eu, é claro que você vai querer aprender essa biblioteca e estar preparado para ela.</p>
+<p>Apesar de ser muito útil e amplamente utilizado, um grande erro cometido é querer colocar o Redux em qualquer aplicação independentemente do tamanho ou complexidade. Caso sua aplicação seja simples, tendo os componentes bem ligados, você pode passar a informação diretamente entre eles, seja simplesmente passando props e callbacks ou usando o ContextAPI, o Redux neste caso pode gerar uma complexidade desnecessária no seu projeto. A verdade é que se você não sabe o por que você precisa usar o Redux em sua aplicação, a grande chance é que você realmente não precise usar. Porém caso você precise utilizar, é uma biblioteca bem poderosa, e é claro que você vai querer aprender e estar preparado para ela.</p>
 
 <h2>🤔 Ok, então o que é o Redux?</h2>
 
@@ -20,7 +20,7 @@ slug: mas-afinal-o-que-eh-redux-e-como-utiliza-lo
 
 <img style="display: block; margin: auto;" alt="Doc Brown" src="/img/posts/docbrown.gif" />
 
-<p>É muito importante lembrar que o Redux é uma implementação do <strong>Flux</strong>, uma arquitetura criada pelo Facebook. Podemos exemplificar ela da seguinte forma: Uma <strong>View</strong> pode disparar um evento que representa uma <strong>Action</strong> (uma ação que realiza alguma lógica), esta ação então é encaminhada para um <strong>Dispatcher</strong>, este cara sabe o que ele deve fazer com essa ação, resolvendo-a e gerando um novo <strong>Store</strong> (estado da aplicação).</p>
+<p>É muito importante lembrar que o Redux é uma implementação do <strong>Flux</strong>, uma arquitetura criada pelo Facebook. Podemos exemplificar ela da seguinte forma: Uma <strong>View</strong> pode disparar um evento que representa uma <strong>Action</strong> (uma ação que realiza alguma lógica), esta ação então é encaminhada para um <strong>Dispatcher</strong>, este cara sabe o que ele deve fazer com essa ação, resolvendo esta e gerando um novo <strong>Store</strong> (estado da aplicação).</p>
 
 <img style="display: block; margin: auto;" alt="Flux Diagram" src="/img/posts/flux-diagram.png" />
 
@@ -28,7 +28,7 @@ slug: mas-afinal-o-que-eh-redux-e-como-utiliza-lo
 
 <p>Com o Redux tudo o que muda na sua aplicação, seja os dados ou o estado da UI, é contido em um único objeto Javascript. Nós chamamos isso de <strong>State</strong> ou <strong>State Tree</strong>, este é o primeiro princípio.</p>
 
-<p>Todas as mutações e mudanças de estados no Redux são explicitas, você consegue manter o rastro de todas elas. O segundo princípio do Redux é que a <strong>State Tree</strong> é <strong>readonly</strong>, você não pode modificá-la diretamente. Para isso, é necessário dar <strong>dispatch</strong> em uma <strong>action</strong>, que é um objeto Javascript simples que descreve a mudança, ele possui uma propriedade <strong>type</strong> que define a sua função. O <strong>state</strong> é uma representação mínima dos dados, enquanto a <strong>action</strong> é a uma representação mínima da mudança desses dados.</p>f
+<p>Todas as mutações e mudanças de estados no Redux são explícitas, você consegue manter o rastro de todas elas. O segundo princípio do Redux é que a <strong>State Tree</strong> é <strong>readonly</strong>, você não pode modificá-la diretamente. Para isso, é necessário dar <strong>dispatch</strong> em uma <strong>action</strong>, que é um objeto Javascript simples que descreve a mudança, ele possui uma propriedade <strong>type</strong> que define a sua função. O <strong>state</strong> é uma representação mínima dos dados, enquanto a <strong>action</strong> é a uma representação mínima da mudança desses dados.</p>
 
 <p>Para descrever uma mutação de estado, você precisa criar o <strong>Reducer</strong>, um intermediário entre o <strong>Dispatcher</strong> e o <strong>Store</strong>. Ele é uma <strong>função pura</strong> que pega o estado antigo e a ação que está sendo despachada, retornando o próximo estado da sua aplicação, este é o terceiro princípio.</p>
 
@@ -44,7 +44,7 @@ slug: mas-afinal-o-que-eh-redux-e-como-utiliza-lo
      sandbox="allow-autoplay allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
-Dentro do arquivo `src/reducers/todos.js` (trecho do código abaixo para facilitar a leitura, caso queria ver o código completo basta usar o sandbox acima) está implementado o nosso **reducer** que verifica qual o tipo da **action** realizada em um `switch case` para fazer uma lógica específica. O `ADD_TODO`, por exemplo, retorna um array contendo <i>todos</i> os estados anteriores com a inserção de um novo estado. Já o `initialState` serve para dizer qual é o estado inicial da nossa lista de todos.
+Dentro do arquivo `src/reducers/todos.js` (trecho de código abaixo para facilitar a leitura, caso queria ver o código completo basta usar o sandbox acima) está implementado o nosso **reducer** que verifica qual o tipo da **action** realizada em um `switch case` para fazer uma lógica específica. O `ADD_TODO`, por exemplo, retorna um array contendo todos os estados anteriores com a inserção de um novo estado. Já o `initialState` serve para dizer qual é o estado inicial da nossa lista de <i>todos</i>.
 
 ```javascript
 import {
@@ -146,7 +146,7 @@ Header.propTypes = {
 export default Header;
 ```
 
-A conexão do `Header` com o Redux é feita em uma arquivo `src/containers/Header.js` que simplesmente importa o `connect` do Redux. O **connect** é uma função que conecta um componente com a **store**, recebendo o `mapStateToProps` (serve para reagir as atualizações do store) e o `mapDispatchToProps` (dispara uma ação para a store). Como temos um componente separado para isso, precisamos apenas executar esta função para salvar o todo no store:
+A conexão do `Header` com o Redux é feita em um arquivo `src/containers/Header.js` que simplesmente importa o `connect` do Redux. O **connect** é uma função que conecta um componente com a **store**, recebendo o `mapStateToProps` (serve para reagir as atualizações do store) e o `mapDispatchToProps` (dispara uma ação para a store). Como temos um componente separado para isso, precisamos apenas executar esta função para salvar o <i>todo</i> no store:
 
 ```javascript
 import { connect } from 'react-redux';
