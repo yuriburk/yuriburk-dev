@@ -55,18 +55,18 @@ export const Title = styled.div`
 
     img {
       width: 50px;
-      height: 50px;
+      height: 55px;
 
       margin-right: 10px;
 
       ${theme.screenSizes.lg} {
         width: 45px;
-        height: 45px;
+        height: 50px;
       }
 
       ${theme.screenSizes.xsm} {
         width: 40px;
-        height: 40px;
+        height: 45px;
       }
     }
   }
