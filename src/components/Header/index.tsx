@@ -4,6 +4,7 @@ import { FaSearch, FaSun, FaMoon } from 'react-icons/fa';
 
 import MenuToggle from './Menu/Toggle';
 import { useTheme } from '../../hooks/theme';
+import logo from '../../../static/img/logo-header.png';
 import { Container, Items, Title, Navigation, Button } from './styles';
 
 const Header: React.FC = () => {
@@ -25,7 +26,10 @@ const Header: React.FC = () => {
     <Container dark={dark}>
       <Items>
         <Title>
-          <Link to="/">{'<YuriBurk />'}</Link>
+          <Link to="/">
+            <img src={logo} alt="logo" />
+            Yuri Burk
+          </Link>
         </Title>
         <Navigation>
           <nav>

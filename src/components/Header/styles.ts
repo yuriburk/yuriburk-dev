@@ -23,6 +23,8 @@ export const Items = styled.div`
   max-width: 1180px;
   padding: 10px 0 10px 10px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: row;
   justify-content: space-between;
 `;
@@ -35,6 +37,8 @@ export const Title = styled.div`
   }
 
   a {
+    display: flex;
+    align-items: center;
     text-decoration: none;
     font-weight: 800;
     font-size: 25px;
@@ -47,6 +51,23 @@ export const Title = styled.div`
 
     ${theme.screenSizes.xsm} {
       font-size: 18px;
+    }
+
+    img {
+      width: 50px;
+      height: 50px;
+
+      margin-right: 10px;
+
+      ${theme.screenSizes.lg} {
+        width: 45px;
+        height: 45px;
+      }
+
+      ${theme.screenSizes.xsm} {
+        width: 40px;
+        height: 40px;
+      }
     }
   }
 `;
