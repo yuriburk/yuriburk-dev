@@ -25,7 +25,7 @@ const Header: React.FC = () => {
   return (
     <Container dark={dark}>
       <Items>
-        <Title>
+        <Title dark={dark}>
           <Link to="/">
             <img src={logo} alt="logo" />
             Yuri Burk

@@ -29,48 +29,50 @@ export const Items = styled.div`
   justify-content: space-between;
 `;
 
-export const Title = styled.div`
-  transition: transform 0.2s cubic-bezier(0, 1.8, 1, 1.8);
+export const Title = styled.div(
+  ({ dark }: IThemeProps) => css`
+    transition: transform 0.2s cubic-bezier(0, 1.8, 1, 1.8);
 
-  &:hover {
-    transform: scale(1.1);
-  }
-
-  a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    font-weight: 800;
-    font-size: 25px;
-    color: ${theme.colors.blue};
-    transition: color 0.2s;
-
-    ${theme.screenSizes.lg} {
-      font-size: 20px;
+    &:hover {
+      transform: scale(1.1);
     }
 
-    ${theme.screenSizes.xsm} {
-      font-size: 18px;
-    }
-
-    img {
-      width: 50px;
-      height: 55px;
-
-      margin-right: 10px;
+    a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 25px;
+      color: ${dark ? '#fff' : '#454545'};
+      transition: color 0.2s;
 
       ${theme.screenSizes.lg} {
-        width: 45px;
-        height: 50px;
+        font-size: 20px;
       }
 
       ${theme.screenSizes.xsm} {
-        width: 40px;
-        height: 45px;
+        font-size: 18px;
+      }
+
+      img {
+        width: 50px;
+        height: 55px;
+
+        margin-right: 10px;
+
+        ${theme.screenSizes.lg} {
+          width: 45px;
+          height: 50px;
+        }
+
+        ${theme.screenSizes.xsm} {
+          width: 40px;
+          height: 45px;
+        }
       }
     }
-  }
-`;
+  `,
+);
 
 export const Navigation = styled.div`
   ul {
