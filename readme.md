@@ -20,3 +20,5 @@ Para executar o projeto:
 2. Faça a instalação global da CLI do Gatsby `yarn global add gatsby-cli`
 3. Instale todas as dependências `yarn install`
 4. Inicie o projeto rodando o script pré-configurado `yarn dev` ou utilizando a CLI do Gatsby `gatsby develop`
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/141c1eba-0a61-44e1-8e61-488a4ab97493/deploy-status)](https://app.netlify.com/sites/yuriburk/deploys)
