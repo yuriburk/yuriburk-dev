@@ -135,10 +135,10 @@ const About: React.FC = () => (
             <p>
               Twitchfy é um projeto criado para estudar o Next.JS com Server
               Side Rendering. Ele funciona buscando na API da Twitch os clips em
-              tendências, permitindo ao usuário filtrar por jogo ou período.
+              tendência, permitindo ao usuário filtrar por jogo ou período.
             </p>
             <p>
-              Pode ser acesso em
+              Pode ser acesso em{' '}
               <a
                 target="_blank"
                 rel="noopener noreferrer"
