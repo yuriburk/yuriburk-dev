@@ -6,6 +6,7 @@ import Socials from '../Socials';
 import profile from '../../../content/images/yuriburk.jpg';
 import promoGames from '../../../content/images/promogames.png';
 import mathHero from '../../../content/images/math-hero.png';
+import twitchfy from '../../../content/images/twitchfy.png';
 import {
   Container,
   Wallpaper,
@@ -120,6 +121,30 @@ const About: React.FC = () => (
                 href="http://math-hero.ronn.in/"
               >
                 aqui
+              </a>
+              .
+            </p>
+          </div>
+        </Project>
+        <Project>
+          <div>
+            <img src={twitchfy} alt="twitchfy" />
+          </div>
+          <div>
+            <h4>Twitchfy</h4>
+            <p>
+              Twitchfy é um projeto criado para estudar o Next.JS com Server
+              Side Rendering. Ele funciona buscando na API da Twitch os clips em
+              tendências, permitindo ao usuário filtrar por jogo ou período.
+            </p>
+            <p>
+              Pode ser acesso em
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://twitchfy.com/"
+              >
+                Twitchfy
               </a>
               .
             </p>
