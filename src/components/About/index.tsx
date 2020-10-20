@@ -42,9 +42,7 @@ const About: React.FC = () => (
         </p>
         <br />
         <p>
-          Minha principal área de conhecimento é desenvolvimento back-end
-          utilizando C#, mas desde o último ano comecei a estudar bastante para
-          me tornar especialista em mobile e front-end, utilizando React.
+          Minha principal área de conhecimento é desenvolvimento front-end com React, mobile com React Native e back-end utilizando C# ou Node.js.
         </p>
         <br />
         <p>
