@@ -53,9 +53,9 @@ const About: React.FC = () => (
 
         <h2>Habilidades</h2>
         <ul>
-          <li>C#</li>
-          <li>Node.js</li>
           <li>React.js</li>
+          <li>Node.js</li
+          <li>C#</li>>
           <li>React Native</li>
           <li>Javascript (ES6+)</li>
           <li>HTML</li>
