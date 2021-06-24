@@ -19,17 +19,6 @@ export default {
     'gatsby-plugin-netlify-cms',
     'netlify-plugin-gatsby-cache',
     {
-      resolve: 'gatsby-plugin-prefetch-google-fonts',
-      options: {
-        fonts: [
-          {
-            family: 'Montserrat',
-            variants: ['500', '600', '800'],
-          },
-        ],
-      },
-    },
-    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',
