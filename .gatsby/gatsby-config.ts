@@ -19,6 +19,16 @@ export default {
     'gatsby-plugin-netlify-cms',
     'netlify-plugin-gatsby-cache',
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `limelight`,
+          `Montserrat\:500,600,800`, // you can also specify font weights and styles
+        ],
+        display: 'swap',
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',
