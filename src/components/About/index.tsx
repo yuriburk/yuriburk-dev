@@ -34,11 +34,11 @@ const About: React.FC = () => (
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://hbsis.com.br/"
+            href="https://nupaybusiness.com.br/"
           >
-            HBSIS
+            NuPay
           </a>{' '}
-          como analista de desenvolvimento full-stack.
+          como engenheiro de software.
         </p>
         <br />
         <p>
