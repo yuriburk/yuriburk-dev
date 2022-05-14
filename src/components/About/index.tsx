@@ -38,18 +38,8 @@ const About: React.FC = () => (
           >
             NuPay
           </a>{' '}
-          como engenheiro de software.
-        </p>
-        <br />
-        <p>
-          Minha principal área de conhecimento é desenvolvimento front-end com
-          React, mobile com React Native e back-end utilizando C# ou Node.js.
-        </p>
-        <br />
-        <p>
-          Meu hobby é aprender novas tecnologias e colocá-las em prática, por
-          tal motivo desenvolvi este blog como forma de estudo utilizando
-          Gatsby, onde irei compartilhar um pouco do que estou estudando.
+          como engenheiro de software. Minha principal área de conhecimento é desenvolvimento front-end com React, mobile com React Native e back-end utilizando C# ou Node.js. Tenho como prática aprender novas tecnologias e colocá-las em prática, por
+          tal motivo desenvolvi este blog como forma de estudo utilizando Gatsby, onde irei compartilhar um pouco do que estou estudando.
         </p>
 
         <h2>Habilidades</h2>
