@@ -20,7 +20,7 @@ const About: React.FC = () => (
     <SEO title="Sobre mim" />
     <Container>
       <Wallpaper>
-        <img src={profile} alt="Yuri Burk" />
+        <img src="" alt="Yuri Burk" />
         <h1>Olá, eu sou o Yuri!</h1>
         <SocialsContainer>
           <Socials color="rgba(28,28,40,0.75)" />
