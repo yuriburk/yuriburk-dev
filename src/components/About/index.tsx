@@ -27,21 +27,6 @@ const About: React.FC = () => (
         </SocialsContainer>
       </Wallpaper>
       <Content>
-        <h2>Sobre mim</h2>
-        <p>
-          Meu nome é Jefferson Yuri Cunha Burk, formado em Sistemas de
-          Informação, moro em Blumenau/SC onde trabalho na{' '}
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://nupaybusiness.com.br/"
-          >
-            NuPay
-          </a>{' '}
-          como engenheiro de software. Minha principal área de conhecimento é desenvolvimento front-end com React, mobile com React Native e back-end utilizando C# ou Node.js. Tenho como prática aprender novas tecnologias e colocá-las em prática, por
-          tal motivo desenvolvi este blog como forma de estudo utilizando Gatsby, onde irei compartilhar um pouco do que estou estudando.
-        </p>
-
         <h2>Habilidades</h2>
         <ul>
           <li>React.js</li>
