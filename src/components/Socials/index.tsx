@@ -18,22 +18,22 @@ const Socials: React.FC<ISocialsProps> = ({ color }) => (
   <Container>
     <SocialIcon
       icon={FaGithubAlt}
-      url="https://github.com/yuriburk"
+      url="https://github.com/"
       color={color}
     />
     <SocialIcon
       icon={FaLinkedinIn}
-      url="https://www.linkedin.com/in/jefferson-yuri-cunha-burk/"
+      url="https://www.linkedin.com/"
       color={color}
     />
     <SocialIcon
       icon={FaInstagram}
-      url="https://instagram.com/yuricunhaburk"
+      url="https://instagram.com/"
       color={color}
     />
     <SocialIcon
       icon={FaGooglePlay}
-      url="https://play.google.com/store/apps/dev?id=6777288266167396492"
+      url="https://play.google.com/"
       color={color}
     />
   </Container>
